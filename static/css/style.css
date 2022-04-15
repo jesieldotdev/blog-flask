@@ -1,0 +1,113 @@
+{% load static %}
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&family=Poppins:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body {
+   
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#header-post{
+    width: 25rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'M PLUS 1', sans-serif;
+  color: grey ;
+  display: absolute;
+  /*font-style: italic;*/
+  
+}
+
+p{
+  font-family: 'M PLUS 1', sans-serif;
+}
+
+#post-title{
+    color: dark;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    display: absolute;
+    font-weight: 800;
+}
+
+
+#autor{
+    font-family: 'Roboto', sans-serif;
+    color: grey ;
+    font-style: bold;
+}
+
+hr{
+    color: grey;
+}
+
+#overlay{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+#post-img{
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    text-indent: inherit;
+    color: black;
+}
+
+
+
+footer{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+li{
+    font-weight: bold;
+}
+
+@cap{
+    color: red;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+pre{
+    background-color: #282828;
+    color: grey;
+    border-radius: 12px;
+    padding: 2px;
+    padding-left: 4px;
+}
