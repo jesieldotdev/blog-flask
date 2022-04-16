@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+
+
+<img id="post-img" style="margin: auto;" class="card-img-top rounded-lg border-0  mt-6 mb-4  w-100" src="{{post.image}}">
+<div style="min-width: 300px; max-width: 800px;" class="card-body container-fluid">
+
+<h2 id="post-title" class="card-title text-center mb-4 ">{{post.title}}</h2>
+ 
+
+  
+
+
+<div id="info" style="margin: auto;" class="">
+<hr>
+<h4 class="text-black-50 mb-0" id="autor">Por {{ autor.username }}</h4>
+<div class=" ">
+<small class="mt-0">
+  <strong>{{ post.created_at }}</strong> às {{post.hora  }}
+</small><br>
+<small class="mt-0">
+	<a href="#"><span class="badge rounded-pill bg-dark p-2 mt-1 mb-1 ">{{ post.categoria }}</span></a>
+</small>
+</div>
+<hr>
+</div>
+
+<div>
+
+<p class="" id="post-body">{% autoescape off  %}
+    {{ post.body }}
+{% endautoescape %}</p>
+
+    <strong>Fonte: </strong><a href="#"><span class="badge rounded-pill bg-secondary p-2 mt-3  ">{{ post.fontes }}</span></a>
+
+</div>
+
+
+<!-- <ul class="nav nav-pills mb-3 d-flex justify-content-around" id="pills-tab" role="tablist">
+  {% for indice in post_list %}
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{indice.title}}</a>
+  </li>
+  {% endfor %}
+</ul> -->
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
+</div>
+
+
+{% endblock %}

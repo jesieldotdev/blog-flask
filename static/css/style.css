@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
+:root {
+    --radius-top:  0px;
+}
+
 body {
    
     font-family: 'M PLUS 1', sans-serif;
@@ -61,6 +65,7 @@ hr{
     max-width: 800px;
     margin: auto;
     display: flex;
+    margin-top: 0;
 }
 
 a{
@@ -104,10 +109,59 @@ blockquote p {
   display: inline;
 }
 
-pre{
+pre, code{
     background-color: #282828;
-    color: grey;
+    color: #d4d4d4;
     border-radius: 12px;
-    padding: 2px;
-    padding-left: 4px;
+    padding: 10px;
+    text-align: start;
+    margin-bottom: 10px;
+    display: flex-start;
+    box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7);
+}
+
+h2{
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+h3{
+    /*font-size: 20px;*/
+    font-weight: 100;
+    
+}
+
+
+
+.card{
+    /*box-shadow: 8px 13px 29px 2px rgba(0,0,0,0.7);*/
+    padding-top: 0;
+    border-top-left-radius: var(--radius-top);
+    border-top-right-radius: var(--radius-top);
+}
+
+/*.card:hover{
+    animation-name: card-move;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+
+}*/
+
+@keyframes card-move{
+
+    0%   {left:0px; top:0px;}
+  50%  {box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7); /*left:5px; top:-5px;*/}
+  
+
+}
+
+.card img{
+    border-top-left-radius: var(--radius-top);
+    border-top-right-radius: var(--radius-top);
+    padding: 0;
 }

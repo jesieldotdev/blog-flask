@@ -36,22 +36,22 @@
 <div class="container">
 
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-0 mb-4">
-  {% for post in Post %}
+  {% for post in posts %}
   <div class="col">
     <div class="card h-100 border-0 ">
-      <img src="{{post.image}}" class="card-img-top rounded-lg img-thumbnail border-0" alt="{{post.slug}}">
+      <img src="{{post['image']}}" class="card-img-top rounded-lg img-thumbnail border-0" alt="{{post['slug']}}">
       <div class="card-body">
-       <a href="{{post.get_absolute_url }}"> <h5 class="card-title">
-    {{ post.title }}  
+       <a href='{{url_for("ver_post",slug=post.slug)}}'>{{post['author_id']}}<h5 class="card-title">
+    {{ post['title'] }}  
   </h5> </a>
-    <small class="date">{{post.created_at }}</small>
+    <small class="date">{{post['created_at'] }}</small>
     <small class="mt-1 mb-1 ml-2 d-flex">
-  <a href="#"><span class="badge rounded-pill bg-dark p-2  ">{{ post.categoria }}</span></a>
+  <a href="#"><span class="badge rounded-pill bg-dark p-2  ">{{ post['categoria'] }}</span></a>
 </small>
         <p class="card-text">{% autoescape off  %}
-    {{ post.body  }}
+    {{ post['body']}}
 {% endautoescape %}</p>
-        <a href="{{ post.get_absolute_url }}"><button class="btn btn-outline-primary">Ler Mais  <i class="fa-solid fa-angle-right"> </i></button></a>
+        <a href='{{url_for("ver_post",slug=post.slug)}}'><button class="btn btn-outline-primary">Ler Mais  <i class="fa-solid fa-angle-right"> </i></button></a>
       </div>
     </div>
   </div>

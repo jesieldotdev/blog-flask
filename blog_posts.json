@@ -1,0 +1,214 @@
+["rows": [
+            [
+                    1,
+                    "Python"
+                ],
+                [
+                    4,
+                    "NodeJS"
+                ],
+                [
+                    5,
+                    "Frameworks"
+                ],
+                [
+                    6,
+                    "WebScraping"
+                ],
+                [
+                    7,
+                    "DataScience"
+                ],
+                [
+                    8,
+                    "Animes"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "blog_post",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE \"blog_post\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"title\" varchar(255) NOT NULL, \"slug\" varchar(255) NOT NULL UNIQUE, \"body\" text NOT NULL, \"created_at\" date NOT NULL, \"updated\" date NOT NULL, \"author_id\" integer NOT NULL REFERENCES \"auth_user\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"image\" varchar(255) NOT NULL)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "integer",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "title",
+                    "type": "varchar",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "slug",
+                    "type": "varchar",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "UNIQUE",
+                            "definition": "UNIQUE"
+                        }
+                    ]
+                },
+                {
+                    "name": "body",
+                    "type": "text",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "created_at",
+                    "type": "date",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "updated",
+                    "type": "date",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "author_id",
+                    "type": "integer",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES \"auth_user\" (\"id\") "
+                        }
+                    ]
+                },
+                {
+                    "name": "image",
+                    "type": "varchar",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Linguagem de Programação Python",
+                    "Python",
+                    "Python é uma linguagem de programação de alto nível,[6] interpretada de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991.[1] Atualmente, possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Apesar de várias partes da linguagem possuírem padrões e especificações formais, a linguagem, como um todo, não é formalmente especificada. O padrão de facto é a implementação CPython.\r\n\r\nA linguagem foi projetada com a filosofia de enfatizar a importância do esforço do programador sobre o esforço computacional. Prioriza a legibilidade do código sobre a velocidade ou expressividade. Combina uma sintaxe concisa e clara com os recursos poderosos de sua biblioteca padrão e por módulos e frameworks desenvolvidos por terceiros.\r\n\r\nPython é uma linguagem de propósito geral de alto nível, multiparadigma, suporta o paradigma orientado a objetos, imperativo, funcional e procedural. Possui tipagem dinâmica e uma de suas principais características é permitir a fácil leitura do código e exigir poucas linhas de código se comparado ao mesmo programa em outras linguagens. Devido às suas características, ela é utilizada, principalmente, para processamento de textos, dados científicos e criação de CGIs para páginas dinâmicas para a web. Foi considerada pelo público a 3ª linguagem \"mais amada\", de acordo com uma pesquisa conduzida pelo site Stack Overflow em 2018[7] e está entre as 5 linguagens mais populares, de acordo com uma pesquisa conduzida pela RedMonk.[8]",
+                    "2022-03-05",
+                    "2022-03-05",
+                    1,
+                    "https:\/\/marquesfernandes.com\/wp-content\/uploads\/2020\/08\/kwi4bvgzths31.jpg"
+                ],
+                [
+                    2,
+                    "MongoDB",
+                    "MongoDB",
+                    "MongoDB é um software de banco de dados orientado a documentos livre, de código aberto e multiplataforma, escrito na linguagem C++. Classificado como um programa de banco de dados NoSQL, o MongoDB usa documentos semelhantes a JSON com esquemas.",
+                    "2022-03-05",
+                    "2022-03-05",
+                    1,
+                    "https:\/\/assets-global.website-files.com\/5f1c75e63b2f950eb473d3e4\/60cbc1205c30f372af2801ce_create-user-mongodb-securely.jpeg"
+                ],
+                [
+                    4,
+                    "Bitcoin",
+                    "bitcoin",
+                    "Bitcoin é uma criptomoeda descentralizada de código aberto. ... Em seu site, a criptomoeda é definida da seguinte forma: “Ela é uma tecnologia digital que permite reproduzir em pagamentos eletrônicos a eficiência dos pagamentos com cédulas de papel. Pagamentos com bitcoins são rápidos, baratos e sem intermediários.",
+                    "2022-03-05",
+                    "2022-03-05",
+                    1,
+                    "https:\/\/www.criptofacil.com\/wp-content\/uploads\/2021\/11\/paraguai-pode-competir-com-o-texas-nos-eua-para-ser-o-maior-centro-de-mineracao-de-bitcoin-do-mundo.jpg"
+                ],
+                [
+                    7,
+                    "Os melhores blogs de tecnologia em 2020",
+                    "os-melhores-blogs-de-tecnologia-em-2020",
+                    "Para se inteirar de grandes assuntos tecnológicos é necessário uma boa fonte de informações. O mundo e suas transformações no cenário tech hoje são acompanhadas de muitas novidades. Assim, o conhecimento sobre as novas tendências auxilia o aprendizado de novas soluções para serem usadas no dia a dia. Para isso, listamos aqui grandes blogs de tecnologia que são referências desses assuntos no Brasil.\r\n\r\nO conhecimento sobre as novidades sobre internet, computadores, celulares, aplicativos, startups, softwares, servidores, hardwares, gadgets, jogos e entretenimento são indispensáveis para que a geração que respira tecnologia continue devidamente informada e conectada. Nesse contexto, se mostra indispensável a atualização sobre as notícias, reviews de produtos e tendências sobre os principais assuntos em alta desse vasto mundo tecnológico.\r\n\r\nShow Me Tech\r\nConsiderado o melhor blog de tecnologia do Brasil em 2019 pelo Prêmio TopBlog Brasil, a Showmetech foi considerada muito relevante em relação a produção de conteúdo em ambiente digital. Além disso, são responsáveis por muitas novidades tecnológicas e análises sobre gadgets, ciência, empresas, jogos e cultura geek.\r\n\r\nTecMundo\r\nO TecMundo é uma grande plataforma que difunde informações sobre tecnologia para toda e qualquer pessoa interessada. Logo, conta com muitos tutoriais e notícias sobre dispositivos móveis, sistemas operacionais, softwares, produtos e atualizações sobre o mercado. O TecMundo também disponibiliza cupons para produtos relacionados à informática e tecnologia em grandes lojas, como Amazon, Lojas Americanas, Dell, Carrefour, entre outras.\r\n\r\nOlhar Digital\r\nCom grande influência dentro do cenário de blogs de tecnologia, o Olhar Digital nos dá referências sobre vários âmbitos em que a tecnologia pode ser empregada e é voltada para produção de conteúdo na web e também na TV. A partir disso, alguns tópicos relevantes tratados pelo blog são sobre carreira, ciência, redes sociais, indústria automotiva, negócios, saúde, cinema, programação e segurança na nuvem. Todas essas relacionadas com muita tecnologia de qualidade, sendo levada a quem mais se interessa pelas pautas.\r\n\r\nTecnoblog\r\nO Tecnoblog compartilha as experiências e conta com a produção de reviews de gadgets, notícias sobre aparelhos, redes sociais e internet, com muitas dicas valiosas. Nesse sentido, não menos importante, o site também envolve e produz um podcast sobre o impacto da tecnologia em nossa rotina diária – o Tecnocast.\r\n\r\niMasters\r\nO iMasters é um portal de notícias multimídia direcionado principalmente para desenvolvedores de aplicativos, com assuntos sobre back-end, front end, design e experiências do usuário, APIs e microsserviços, internet das coisas, redes, servidores, segurança e principais mudanças do iOS e Android. Além disso, conta com mais de 450 mil profissionais, com publicação diária de conteúdo com foco para a web.\r\n\r\nDreamLabs\r\nNão menos importante, o blog da DreamLabs tem como objetivo principal espalhar conteúdo para ajudar empreendedores a atingir o sucesso por meio da inovação, tecnologia e negócios.",
+                    "2022-03-05",
+                    "2022-03-05",
+                    1,
+                    "https:\/\/dreamlabs.com.br\/wp-content\/uploads\/2020\/04\/wordpress-923188_1920-1536x1024.jpg"
+                ],
+                [
+                    8,
+                    "O que é blog?",
+                    "o-que-e-blog",
+                    "O blog é um site pessoal ou profissional, atualizado frequentemente e que pode ser usado tanto por empresas, quanto por usuários comuns que desejam ter um diário na internet. A ferramenta, que popularizou a produção de conteúdo, é o principal meio de comunicação de diversos portais, como o Tecnoblog.\r\n\r\nQual a diferença do WordPress.com e WordPress.org?\r\nO que é Tumblr? [vida e quase morte da plataforma de blogs]\r\nBlog \/ o que é blog\r\nO que é blog?\r\nUm blog é um site estruturado de forma diferente que uma página institucional (como o site de uma empresa) ou um portal de notícias tradicional. Em geral, um blog é uma página atualizada com conteúdos de forma frequente.\r\n\r\nUm blog pode ser conduzido como um endereço particular (originalmente, a ferramenta foi pensada para diários pessoais na internet), como um portal com posts sobre assuntos dentro de um tema específico (como o Tecnoblog, de tecnologia, e o Meio Bit, tecnologia e entretenimento), ou como uma forma de empresas publicarem atualizações específicas a parceiros e consumidores.\r\n\r\nDe onde veio o termo?\r\nA palavra “weblog” (que pode ser traduzida como “registro na rede”) não tem um significado próprio por si só e foi criada em 1997 por John Barger, autor do blog Robot Wisdom, o primeiro site do tipo no mundo. Ela foi abreviada para “blog”, em 1999, pelo escritor Peter Merholz, que quebrou os dois termos para formar a frase “we blog”, ou “nós blogamos”.\r\n\r\nPouco tempo depois, o programador do Pyra Labs Evan Williams usou a palavra “blog” como substantivo e como verbo, criando a conjugação “blogar”. Foi a Pyra Labs que desenvolveu a ferramenta Blogger, comprada posteriormente pelo Google. Hoje, Williams é um empreendedor e fundou outra plataforma de blogs, o Medium.\r\n\r\nblogging-wordpress-pexels \/ o que é blog\r\nOs blogs surgiram no fim dos anos 1990, como uma alternativa a comunidades digitais como a Usenet, as listas de discussão por e-mail e da BBS, um sistema de conexão que precedeu a internet, mantido por universidades.\r\n\r\nO blog como meio de comunicação ganhou tração no início dos anos 2000, com o lançamento de ferramentas de hospedagem que facilitaram a criação de sites pessoais e democratizaram a criação de conteúdo, reduzindo ou eliminando a necessidade do usuário ter conhecimentos extensos de programação.\r\n\r\nTais plataformas, como o Blogger, o WordPress e o Medium possuem serviços gratuitos, em que qualquer um pode começar seu próprio blog.\r\n\r\nAlgumas plataformas oferecem serviços profissionais a usuários pagantes, que desejam criar blogs com um ar mais profissional. O Tecnoblog e o Meio Bit são publicados via WordPress, que atende ambos perfis de usuários.",
+                    "2022-03-06",
+                    "2022-03-06",
+                    1,
+                    "https:\/\/files.tecnoblog.net\/wp-content\/uploads\/2019\/11\/blog-700x394.jpg"
+                ],
+                [
+                    10,
+                    "O Que É Angular?",
+                    "O-que-e-angular",
+                    "Angular é uma plataforma e framework para construção da interface de aplicações usando HTML, CSS e, principalmente, JavaScript, criada pelos desenvolvedores da Google.\r\n\r\nEle possui alguns elementos básicos que tornam essa construção interessante.\r\n\r\nDentre os principais, podemos destacar os componentes, templates, diretivas, roteamento, módulos, serviços, injeção de dependências e ferramentas de infraestrutura que automatizam tarefas, como a de executar os testes unitários de uma aplicação.\r\n\r\nAngular nos ajuda a criar Single-Page Applications com uma qualidade e produtividade surpeendente!\r\n\r\nAlguns outros pontos dessa plataforma que merecem destaque são o fato de que ela é open source, possui uma grande comunidade, existem várias empresas utilizando e tem muito material de estudo para quem deseja se aperfeiçoar.\r\n\r\nÉ importante deixar claro que nós estamos falando de Angular, ou Angular 2+. Não estamos falando de AngularJS 1.x.\r\n\r\nCaso você seja novo no mundo Angular, deve estar se perguntando: Mas qual é a diferença? É só a versão?\r\n\r\nNa verdade, são tecnologias completamente diferentes!\r\n\r\nAngularJS é um framework JavaScript para desenvolvimento web. Foi o framework queridinho no mercado por alguns anos.\r\n\r\nMas para acompanhar a evolução da tecnologia, os desenvolvedores perceberam que seria melhor criar um novo framework do zero, usando toda a experiência que tiveram com o AngularJS e necessidades dos desenvolvedores.\r\n\r\nE então, surgiu o Angular 2, uma verdadeira plataforma para desenvolvimento de aplicações não só web, mas também mobile, com mudanças significativas na sua estrutura.\r\n\r\nObviamente, uma aplicação desenvolvida com AngularJS não é compatível com Angular.\r\n\r\nE claro, essa grande mudança deixou alguns desenvolvedores preocupados. Ninguém gosta de saber que a tecnologia que está usando vai ser substituída por uma nova, né?\r\n\r\nEmbora o projeto do AngularJS continue sendo mantido, essa mudança fez com que ele perdesse força no mercado, dando lugar para o novo Angular.\r\n\r\nE não seria nenhuma novidade pra gente se passasse por sua cabeça: “E se eu começar a usar o novo Angular e acontecer isso outra vez, de recriarem o framework?“.\r\n\r\nEmbora essa possibilidade exista, na nossa opinião ela é muito pequena. E como desenvolvedores de software, nós estamos sempre suscetíveis a isso com qualquer tecnologia. E por um lado, achamos isso muito bom!",
+                    "2022-03-25",
+                    "2022-03-25",
+                    1,
+                    "https:\/\/algaworks-blog.s3.amazonaws.com\/wp-content\/uploads\/Angular-1024x535.png"
+                ]
+            ]
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "auth_permission_content_type_id_2f476e4b",
+            "unique": false,
+            "ddl": "CREATE INDEX \"auth_permission_content_type_id_2f476e4b\" ON \"auth_permission\" (\"content_type_id\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "auth_permission_content_type_id_codename_01ab375a_uniq",
+            "unique": true,
+            "ddl": "CREATE UNIQUE INDEX \"auth_permission_content_type_id_codename_01ab375a_uniq\" ON \"auth_permission\" (\"content_type_id\", \"codename\")"
+        },
+        {
+            "type": "index",
+            "database": null,
+            "name": "blog_post_author_id_dd7a8485",
+            "unique": false,
+            "ddl": "CREATE INDEX \"blog_post_author_id_dd7a8485\" ON \"blog_post\" (\"author_id\")"
+        }
+    ]
+}
+]
