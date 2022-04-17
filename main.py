@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from markupsafe import escape
 import sqlite3
 
@@ -60,11 +60,24 @@ def auth_user():
     conn = sqlite3.connect('db.sqlite3')
     conn.row_factory=sqlite3.Row
     cursor=conn.cursor()
-    cursor.execute("select * from auth_user where email=?", (email,))
-    autor = cursor.fetchone()
-    
-  return (f"Bem vindo, {autor['username']}")
+    cursor2=conn.cursor()
+    try:
+      cursor.execute("select * from auth_user where email=?", (email,))
+      cursor2.execute("select * from auth_user where password=?", (senha,))
+      user_email = cursor.fetchone()
+      user_senha = cursor2.fetchone()
+      if email == user_email['email']:
+        if senha == user_senha['password']:
+          flash(f"Bem vindo, {user_email['username']}", "success")
+          return redirect(url_for("index"))
+      else:
+        flash('Usuário ou senha inválidos.', "danger")
+        return redirect(url_for("pagina_login"))
+    except:
+      flash(f'Nenhum usuário com o email {email}', 'warning')
+      return redirect(url_for("pagina_login"))
    
 
 if __name__ == '__main__':
+  app.secret_key="admin123"
   app.run(debug=True, port=8080)
