@@ -2,30 +2,8 @@
 {% block title %} Tech Future - Seu Blog Sobre Tecnologia {% endblock %}
 
 {% block content %}
-<!-- <div class=" container-fluid text-center  m-2">
-{% for indice in Categoria %}
-
-<a href="#"><span class="badge rounded-pill bg-dark p-2 mb-1 ">{{  indice.nome }}</span></a>
-
-
-{% endfor %}
-</div> -->
-
-
-<div class="position-sticky bottom-0 end-0 p-3" style="z-index: 11">
-  <div id="liveToast" class="toast bg-dark text-light" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header bg-dark text-light">
-      <img src="https://img.icons8.com/fluency/48/000000/logo.png" class="rounded me-2" alt="...">
-      <strong class="me-auto">Tech Future</strong>
-      <small>11 mins atrás</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Olá Viajante! Seja bem vindo ao Blog.
-    </div>
-  </div>
-</div>
-
+  
+  
 
 <h2 class="text-center">Artigos Em Destaque</h2>
 
@@ -33,31 +11,31 @@
 
 
 
-<div class="container">
+<div  class="container">
 
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-0 mb-4">
+  
   {% for post in posts %}
-  <div class="col">
+  <div  class="col ">
     <div class="card h-100 border-0 ">
-      <img src="{{post['image']}}" class="card-img-top rounded-lg img-thumbnail border-0" alt="{{post['slug']}}">
+      <a href="{{url_for('ver_post', slug= post.slug) }}">
+      <img src="{{post.image}}" class="card-img-top rounded-lg  border-0" alt="{{post.slug}}">
       <div class="card-body">
-       <a href='{{url_for("ver_post",slug=post.slug)}}'>{{post['author_id']}}<h5 class="card-title">
-    {{ post['title'] }}  
+        <h5 class="card-title">
+    {{ post.title }}  
   </h5> </a>
-    <small class="date">{{post['created_at'] }}</small>
-    <small class="mt-1 mb-1 ml-2 d-flex">
-  <a href="#"><span class="badge rounded-pill bg-dark p-2  ">{{ post['categoria'] }}</span></a>
-</small>
-        <p class="card-text">{% autoescape off  %}
-    {{ post['body']}}
-{% endautoescape %}</p>
-        <a href='{{url_for("ver_post",slug=post.slug)}}'><button class="btn btn-outline-primary">Ler Mais  <i class="fa-solid fa-angle-right"> </i></button></a>
+    <small class="date">{{post.created_at}}</small>
+        <p class="card-text">{% autoescape off %} 
+        {{ post.body | truncate(250)}}  
+      {% endautoescape %}</p>
+        <a href="{{ url_for('ver_post', slug= post.slug) }}"><button class="btn btn-outline-primary">Ler Mais  <i class="fas fa-solid fa-angle-right"> </i></button></a>
       </div>
     </div>
   </div>
   {% endfor %}
-</div>
+
 
 </div>
 
-{% endblock %}
+
+  {% endblock %}
