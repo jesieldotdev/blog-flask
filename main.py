@@ -73,20 +73,19 @@ def auth_user():
     cursor2=conn.cursor()
     try:
       cursor.execute("select * from auth_user where email=?", (email,))
-      cursor2.execute("select * from auth_user where password=?", (senha,))
-      user_email = cursor.fetchone()
-      user_senha = cursor2.fetchone()
-      if email == user_email['email']:
-        if senha == user_senha['password']:
-          flash(f"Bem vindo(a), {user_email['username']}", "success")
-          nome = user_email['username']
+      user = cursor.fetchone()
+      print(user['email'], user['password'])
+      if email == user['email']:
+        if senha == user['password']:
+          flash(f"Bem vindo(a), {user['username']}", "success")
+          nome = user['username']
           session['nome'] = nome
           return redirect(url_for("index"))
-      else:
-        flash('Usuário ou senha inválidos.', "danger")
-        return redirect(url_for("pagina_login"))
+        else:
+          flash('Usuário ou senha inválidos.', "danger")
+          return redirect(url_for("pagina_login"))
     except:
-      flash(f'Nenhum usuário com o email {email}', 'warning')
+      flash('Usuário ou senha inválidos.', "danger")
       return redirect(url_for("pagina_login"))
 
 @app.route("/logout")
@@ -96,4 +95,4 @@ def logout():
 
 if __name__ == '__main__':
   app.secret_key="admin123"
-  app.run(debug=True, port=8080)
+  app.run(debug=False, port=8080)
