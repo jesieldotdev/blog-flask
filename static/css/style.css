@@ -192,8 +192,9 @@ h3{
 
 #painel-header a{
     text-decoration: underline;
-    text-decoration-color: #E8D748;
+    text-decoration-color: #ffffcc;
     color: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 
 #painel-main{
@@ -218,7 +219,7 @@ h3{
     margin-bottom: 0;
 }
 
-#painel-main #dt{
+#painel-main .dt{
     /* background-color: #987567; */
     padding: 10px;
     color: #fffeee;
@@ -246,7 +247,7 @@ h3{
     margin: 1px;
 }
 
-#dt .type{
+.dt .type{
     
     font-weight: bold;
 }
