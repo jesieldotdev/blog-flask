@@ -14,15 +14,16 @@ def index():
   conn.row_factory=sqlite3.Row
   # Pegar os posts
   cursor=conn.cursor()
-  cursor.execute("select * from BLOG_POSTS")
+  cursor.execute("select * from BLOG_POSTS ORDER BY id DESC")
   post = cursor.fetchall()
 
+  print(type(post))
 
   # Pegar o autor
   cursor2=conn.cursor()
   cursor2.execute('SELECT * FROM auth_user WHERE id=? ', (1,))
   autor = cursor2.fetchone()
-  return render_template("index.html", posts=post, autor=autor)
+  return render_template("index.html", posts= post, autor=autor)
 
 
 @app.route('/ver_post/<string:slug>', methods=["POST", "GET"])
