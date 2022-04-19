@@ -97,7 +97,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
-blockquote:before {
+blockquote: before {
   color: #ccc;
   content: open-quote;
   font-size: 4em;
@@ -254,4 +254,27 @@ h3{
 
 .action {
 
+}
+
+i img{
+   font-size: 28px;
+   color: red;
+}
+
+/* .parent{
+  color: #876678;
+
+}
+.parent:hover{
+  color: #876678;
+  background: #85c1fc;
+}
+
+.parent svg path{
+  fill: currentColor;
+} */
+
+svg{
+     
+    fill: red;
 }
