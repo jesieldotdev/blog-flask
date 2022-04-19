@@ -16,14 +16,36 @@ def index():
   # Pegar os posts
   cursor=conn.cursor()
   cursor.execute("select * from BLOG_POSTS ORDER BY id DESC")
-  post = cursor.fetchall()
+  db = cursor.fetchall()
 
   # Pegar o autor
   cursor2=conn.cursor()
   cursor2.execute('SELECT * FROM auth_user WHERE id=? ', (1,))
   autor = cursor2.fetchone()
+  start = 0
+  end = 4
+  post = db[(start):(end)]
   
   return render_template("blog/index.html", posts= post, autor=autor)
+  
+@app.route('/<int:post_num>', methods=['POST', 'GET'])
+def page(post_num):
+  print(post_num)
+  conn = sqlite3.connect('db.sqlite3')
+  conn.row_factory=sqlite3.Row
+  # Pegar os posts
+  cursor=conn.cursor()
+  cursor.execute("select * from BLOG_POSTS ORDER BY id DESC")
+  db = cursor.fetchall()
+
+  # Pegar o autor
+  cursor2=conn.cursor()
+  cursor2.execute('SELECT * FROM auth_user WHERE id=? ', (1,))
+  autor = cursor2.fetchone()
+  start = post_num
+  end = start * 2
+  post = db[(start):(end)]
+  return render_template('blog/index.html', posts=post, autor = autor )
 
 
 @app.route('/ver_post/<string:slug>', methods=["POST", "GET"])
@@ -74,7 +96,6 @@ def auth_user():
     try:
       cursor.execute("select * from auth_user where email=?", (email,))
       user = cursor.fetchone()
-      print(user['email'], user['password'])
       if email == user['email']:
         if senha == user['password']:
           flash(f"Bem vindo(a), {user['username']}", "success")
@@ -95,4 +116,4 @@ def logout():
 
 if __name__ == '__main__':
   app.secret_key="admin123"
-  app.run(debug=False, port=8080)
+  app.run(debug=True, port=8080)
