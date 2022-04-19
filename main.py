@@ -115,5 +115,5 @@ def logout():
   return redirect(url_for("index"))
 
 if __name__ == '__main__':
-  app.secret_key="admin123"
+  app.secret_key="1245"
   app.run(debug=True, port=8080)
