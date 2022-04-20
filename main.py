@@ -27,7 +27,7 @@ def index():
   end = 4
   post = db[(start):(end)]
   
-  return render_template("blog/index.html", posts= post, autor=autor)
+  return render_template("blog/index.html", posts= db, autor=autor)
   
 @app.route('/<int:post_num>', methods=['POST', 'GET'])
 def page(post_num):

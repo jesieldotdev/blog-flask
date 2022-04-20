@@ -1,10 +1,30 @@
-#login-header{
+.login-canvas{
   background-color: #4449ff;
+  padding-top: 70px;
+  padding-bottom: 100%;
+
+ 
+}
+
+#login-container{
+  max-width: 400px;
+  height: 600px;
+  border-radius: 12px;
+}
+
+
+#login-header{
+  
   padding: 20px;
   margin: 0;
 }
 
+
 #login-header h2{
-  color: #ffffff;
+  color: #4449ff;
   
+}
+
+.form{
+  padding-left: 20px;
 }

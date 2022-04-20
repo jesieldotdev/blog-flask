@@ -12,6 +12,10 @@
   <link rel="icon" 
       type="image/x-icon" 
       href="{{ url_for('static',filename='favicon/favicon.ico') }}" />
+
+  <!-- MDB -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}" />
       
 
 
@@ -35,9 +39,9 @@
 <body>
 
  <!-- Navbar -->
- <nav class="navbar pt-0 navbar-expand-lg navbar-light bg-light fixed-top">
+ <nav class="navbar pt-0 pb-0 navbar-expand-lg navbar-light  fixed-top ">
 
-  <div class="container-fluid shadow-lg mt-0 p-1 mb-1 bg-body rounded">
+  <div id="nav-left" class="container-fluid shadow-lg mt-0 pb-0 p-1 mb-1 bg-body rounded">
     <a id="logo" style="color: grey;" class="navbar-brand " href="#">
       <img src="https://img.icons8.com/fluency/48/000000/logo.png" alt="" width="26" height="24" class="d-inline-block align-text-center">
       Tech Future
@@ -45,16 +49,19 @@
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <div class="collapse navbar-collapse justify-content-lg-end w-75" id="navbarSupportedContent">
 
-      <div class="">
-      <ul class="navbar-nav">
+   
+      <ul id="nav-list" class="navbar-nav ">
         <li class="nav-item">
         <a class="nav-link" aria-current="page" href="/">Home</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#">Produtos</a>
+        <a class="nav-link" aria-current="page" href="/categorias">Categorias</a>
       </li>
+      
       {% if not session.email %}
        <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
@@ -69,18 +76,10 @@
         <a href="/admin" class="nav-link" href="/admin">Admin</a>
       </li>
 
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Blog
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/categorias">Categorias</a></li>
-            <li><a class="dropdown-item" href="/ano/s">Ano</a></li>
-            
-          </ul>
-        </li>
+      
     </ul>
-</div>
+
+
 
     </div>
   </div>
@@ -101,44 +100,16 @@
 		{% endblock %}
 	</main>
 
-  <hr class="mx-auto mt-4 mb-0" style="width: 50%;">
-<footer  class="mx-auto w-50 ">
 
-  <div id="footer">
-     <a style="padding: 10px;" href="https://github.com/jesiel364" class="parent"><img style="fill: red;"  src="{{url_for('static', filename='svgs/github-fill.svg') }}"/></img></a> 
 
-    <a href='https://www.instagram.com/jesiel.dev/'><i style="padding: 10px;" class="parent"> <img  src="{{url_for('static', filename='svgs/instagram-fill.svg') }}"/></img></i></a>
-    
-    <a href='https://pin.it/39NM9vh'><i style="padding: 10px;" class="parent"> <img style='fill: red;'  src="{{url_for('static', filename='svgs/pinterest-fill.svg') }}"/></img></i></a>
-    <br>
-<!-- <div class="glyph fs1">
-      <div class="clearfix bshadow0 pbs">
-        <span class="icon icon-home"></span>
-      </div>
-      <fieldset class="fs0 size1of1 clearfix hidden-false">
-        <input type="text" readonly value="e900" class="unit size1of2" />
-        <input type="text" maxlength="1" readonly value="&#xe900;" class="unitRight size1of2 talign-right" />
-      </fieldset>
-  </div> -->
-</footer>
-<p class="text-center ">©2022</p>
 
-<!-- Text Toast -->
-<script onload="toast.show()" type="text/javascript">
-  var toastTrigger = document.getElementById('logo')
-var toastLiveExample = document.getElementById('liveToast')
-if (toastTrigger) {
-  toastTrigger.addEventListener('click', function () {
-    var toast = new bootstrap.Toast(toastLiveExample)
 
-    toast.show()
-  })
-}
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <script src="demo-files/liga.js"></script>
   <script src="demo-files/demo.js"></script>
+
 
 
 

@@ -2,11 +2,14 @@
 {% block title %}Página de Login{% endblock %}
 
 {% block content %}
+<div class="login-canvas">
+
+<div id="login-container" class="container bg-light text-dark ">
 <header id="login-header">
-  <h2>Fazer Login</h2>
+  <h2 class="">Fazer Login</h2>
 </header>
 
-<main class=" p-3">
+<main class="form">
 <form method="post" action="{{url_for('auth_user')}}">
   <div class="row mb-3 ">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
@@ -34,5 +37,20 @@
   <button value="Submit" type="submit" class="btn btn-primary">Entrar</button>
 </form>
 </main>
+</div>
 
+  <hr class="mx-auto mt-4 mb-0" style="width: 50%;">
+<footer  class="mx-auto w-50 ">
+
+  <div id="footer">
+     <a style="padding: 10px;" href="https://github.com/jesiel364" class="parent"><img style="fill: red;"  src="{{url_for('static', filename='svgs/github-fill.svg') }}"/></img></a> 
+
+    <a href='https://www.instagram.com/jesiel.dev/'><i style="padding: 10px;" class="parent"> <img  src="{{url_for('static', filename='svgs/instagram-fill.svg') }}"/></img></i></a>
+    
+    <a href='https://pin.it/39NM9vh'><i style="padding: 10px;" class="parent"> <img style='fill: red;'  src="{{url_for('static', filename='svgs/pinterest-fill.svg') }}"/></img></i></a>
+    <br>
+<p class="text-center ">©2022</p>
+</footer>
+
+</div>
 {% endblock %}

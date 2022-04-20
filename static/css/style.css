@@ -22,8 +22,9 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'M PLUS 1', sans-serif;
-  color: grey ;
+  font-family: 'Roboto', sans-serif;
+  color: #282868
+  font-weight: 600;
   display: absolute;
   /*font-style: italic;*/
   
@@ -277,4 +278,13 @@ i img{
 svg{
      
     fill: red;
+}
+
+
+#nav-list{
+    margin-right: 40px;
+}
+
+.navbar-brand{
+    margin-left: 40px;
 }
