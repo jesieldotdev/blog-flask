@@ -78,7 +78,7 @@ def pagina_admin():
   if not session.get('email'):
     flash('Você não está logado.', 'warning')
     return redirect(url_for('pagina_login'))
-  return render_template('pagina_admin.html')
+  return render_template('admin/pagina_admin.html')
 
 @app.route('/login')
 def pagina_login():
@@ -114,6 +114,11 @@ def auth_user():
 def logout():
   session['email'] = None
   return redirect(url_for("index"))
+
+@app.route("/admin/criar-post")
+def criar_post():
+  return render_template('admin/criar_post.html')
+
 
 if __name__ == '__main__':
   app.secret_key="1245"

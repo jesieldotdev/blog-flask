@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Criar Post{% endblock %}
+
+{% block content %}
+
+<div class="p-2">
+<div class="mb-3">
+  <label  for="title" class="form-label">Titulo</label>
+  <input type="text" class="form-control" id="title" placeholder="Meu Primeiro Artigo">
+</div>
+<div class="mb-3">
+  <label for="slug" class="form-label">Slug</label>
+  <input type="slug" class="form-control" id="slug" placeholder="meu-primeiro-artigo">
+</div>
+<div class="mb-3">
+  <label for="body" class="form-label">Conteúdo</label>
+  <textarea class="form-control" id="body" rows="3"></textarea>
+</div>
+<div class="mb-3">
+  <label for="author" class="form-label">Autor</label>
+  <input type="text" class="form-control" id="author" placeholder="Autor">
+</div>
+<div class="mb-3">
+  <label for="image" class="form-label">Imagem</label>
+  <input type="url" class="form-control" id="image" placeholder='https://github.com/image.png'>
+</div>
+</div>
+
+<div class="p-2 justify-content-around">
+  <button class="btn btn-success p-2">Salvar</button>
+    <button class="btn btn-danger p-2">Descartar</button>
+
+</div>
+        <button class="btn btn-primary ml-2 p-2">Salvar e Adicionar outro</button>
+
+
+
+
+{% endblock %}
