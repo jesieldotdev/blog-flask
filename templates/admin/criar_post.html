@@ -3,8 +3,14 @@
 
 {% block content %}
 
-<div class="p-2">
-<div class="mb-3">
+<header id="painel-header">
+	<h4 class="text-center pt-2">Painel de Administração</h4>
+	<div id="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for("index")}}">VER SITE</a> / <a href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
+</header
+
+
+<div id="criar-post" class="p-2">
+<div class="mb-3 mt-3">
   <label  for="title" class="form-label">Titulo</label>
   <input type="text" class="form-control" id="title" placeholder="Meu Primeiro Artigo">
 </div>
@@ -14,7 +20,7 @@
 </div>
 <div class="mb-3">
   <label for="body" class="form-label">Conteúdo</label>
-  <textarea class="form-control" id="body" rows="3"></textarea>
+  <textarea class="form-control" id="body" rows="8"></textarea>
 </div>
 <div class="mb-3">
   <label for="author" class="form-label">Autor</label>
@@ -26,14 +32,16 @@
 </div>
 </div>
 
-<div class="p-2 justify-content-around">
-  <button class="btn btn-success p-2">Salvar</button>
-    <button class="btn btn-danger p-2">Descartar</button>
-
+<div class="action-canvas" >
+   <div class="div1">
+     <button class="btn btn-success p-2">Salvar</button>
+ 
+          <button class="btn btn-danger p-2">Descartar</button>
+   </div> 
+   <div class="div2">
+       <button class="btn btn-primary ml-2 p-2">Salvar e Adicionar outro</button>
+   </div>
 </div>
-        <button class="btn btn-primary ml-2 p-2">Salvar e Adicionar outro</button>
-
-
-
+ 
 
 {% endblock %}

@@ -1,0 +1,34 @@
+#criar-post{
+ margin-left: 20px;
+}
+
+label{
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.action-canvas{
+  margin: 20px;
+}
+
+.div1{
+  
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  
+}
+
+.div2{
+  justify-content: center;
+  display: flex;
+  
+}
+
+#menu a{
+  font-weight: 100;
+  font-size: 12px;
+}
+
+
+
