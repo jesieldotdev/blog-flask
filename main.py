@@ -88,7 +88,6 @@ def pagina_login():
 def auth_user():
   if request.method == "POST":
     email= request.form['email']
-    session['email'] = email
     senha= request.form['senha']
     conn = sqlite3.connect('db.sqlite3')
     conn.row_factory=sqlite3.Row
@@ -99,6 +98,7 @@ def auth_user():
       user = cursor.fetchone()
       if email == user['email']:
         if senha == user['password']:
+          session['email'] = email
           flash(f"Bem vindo(a), {user['username']}", "success")
           nome = user['username']
           session['nome'] = nome
