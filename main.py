@@ -84,11 +84,17 @@ def pagina_admin():
 def pagina_login():
   return render_template('admin/pagina_login.html')
   
-@app.route('/auth_user', methods=['POST', 'GET'])
+@app.route('/login/auth_user', methods=['POST', 'GET'])
 def auth_user():
   if request.method == "POST":
-    email= request.form['email']
+    email = request.form['email']
     senha= request.form['senha']
+    check = request.form.get('lembrar')
+    if check:
+      lembrar = True
+    else:
+      lembrar = False
+
     conn = sqlite3.connect('db.sqlite3')
     conn.row_factory=sqlite3.Row
     cursor=conn.cursor()
@@ -98,10 +104,16 @@ def auth_user():
       user = cursor.fetchone()
       if email == user['email']:
         if senha == user['password']:
-          session['email'] = email
+          
           flash(f"Bem vindo(a), {user['username']}", "success")
           nome = user['username']
-          session['nome'] = nome
+          
+          if lembrar == True:
+            flash('Lembrar ativado', 'success')
+            session['nome'] = nome
+            session['email'] = email
+          else:
+            flash('Lembrar desativado', 'success')
           return redirect(url_for("index"))
         else:
           flash('Usuário ou senha inválidos.', "danger")
