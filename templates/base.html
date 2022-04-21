@@ -9,14 +9,10 @@
 <!--   <link rel="stylesheet" href="{{ url_for( 'static', filename='demo-files/demo.css') }}"> -->
 
   <!-- favicon -->
-  <link rel="icon" 
-      type="image/x-icon" 
-      href="{{ url_for('static',filename='favicon/favicon.ico') }}" />
-
-  <!-- MDB -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}" />
-      
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="246x246" href="{{ url_for('static', filename='favicon/android-chrome-512x512.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
 
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -28,6 +24,8 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/login.css') }}">
   
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/criar_post.css') }}">
+  
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/admin.css') }}">
 
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +43,7 @@
 
   <div id="nav-left" class="container-fluid shadow-lg mt-0 pb-0 p-1 mb-1 bg-body rounded">
     <a id="logo" style="color: grey;" class="navbar-brand " href="#">
-      <img src="https://img.icons8.com/fluency/48/000000/logo.png" alt="" width="26" height="24" class="d-inline-block align-text-center">
-      Tech Future
+      <img id="nav-logo" src="{{ url_for('static', filename='img/logo-variation.png') }}" alt=""  class="d-inline-block align-text-center">
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -93,11 +90,12 @@
 {% with messages=get_flashed_messages(with_categories=true) %}
         {% if messages %}
           {% for category,message in messages %}
-            <div class='alert alert-{{category}}'>{{message}}</div>
+            <div class='alert alert-{{category}} mb-0 fixed-bottom'>{{message}}</div>
           {% endfor %}
         {% endif %}
       {% endwith %}
-		{% block content %}
+		
+    {% block content %}
 
 		{% endblock %}
 	</main>
@@ -109,11 +107,6 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-  <script src="demo-files/liga.js"></script>
-  <script src="demo-files/demo.js"></script>
-
-
-
 
 </body>
 </html>

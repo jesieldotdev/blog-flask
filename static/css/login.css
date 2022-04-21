@@ -1,5 +1,5 @@
 .login-canvas{
-  background-color: #4449ff;
+  background-color: #6F00A2;
   padding-top: 70px;
   padding-bottom: 100%;
 
@@ -8,23 +8,63 @@
 
 #login-container{
   max-width: 400px;
-  height: 600px;
+  padding-bottom: 60px;
   border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
 }
 
+#login-logo{
+  height: 200px;
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
 
 #login-header{
-  
-  padding: 20px;
-  margin: 0;
+  justify-content: center;
+  display: flex;
+  /* background-color: green; */
+
 }
 
 
 #login-header h2{
-  color: #4449ff;
-  
+  color: #A726E3;
 }
 
 .form{
-  padding-left: 20px;
+  padding-top: 80px;
+
+}
+
+.form, #login-header{
+  max-width: 300px;
+  margin: auto;
+  /* background-color: red; */
+}
+
+.button-control{
+  display: flex;
+}
+
+#form-button{
+  background-color: #A726E3;
+  border: none;
+  align-content: center;
+  width: 100%;
+}
+
+input[type="checkbox"]:checked {
+  /* display: none; */
+  background-color: #A726E3;
+  border: none;
+
+
+}
+
+.form-check-label{
+  font-size: 16px;
 }

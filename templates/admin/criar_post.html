@@ -3,45 +3,87 @@
 
 {% block content %}
 
-<header id="painel-header">
-	<h4 class="text-center pt-2">Painel de Administração</h4>
-	<div id="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for("index")}}">VER SITE</a> / <a href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
-</header
 
+<header class="pt-2" id="painel-header">
 
-<div id="criar-post" class="p-2">
-<div class="mb-3 mt-3">
-  <label  for="title" class="form-label">Titulo</label>
-  <input type="text" class="form-control" id="title" placeholder="Meu Primeiro Artigo">
-</div>
-<div class="mb-3">
-  <label for="slug" class="form-label">Slug</label>
-  <input type="slug" class="form-control" id="slug" placeholder="meu-primeiro-artigo">
-</div>
-<div class="mb-3">
-  <label for="body" class="form-label">Conteúdo</label>
-  <textarea class="form-control" id="body" rows="8"></textarea>
-</div>
-<div class="mb-3">
-  <label for="author" class="form-label">Autor</label>
-  <input type="text" class="form-control" id="author" placeholder="Autor">
-</div>
-<div class="mb-3">
-  <label for="image" class="form-label">Imagem</label>
-  <input type="url" class="form-control" id="image" placeholder='https://github.com/image.png'>
+<div  class="accordion accordion-flush" id="accordionFlushExample">
+  <div  class="accordion-item">
+    <h2  class="accordion-header" id="flush-headingOne">
+      <button id="accordion-bt" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        <h3 id="accordion-titulo">Painel de Administração</h3>
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <div class="menu">
+    <span>Bem vindo(a), {{session.nome}}
+      <a href="{{url_for('index')}}">VER SITE</a> / 
+      <a href="">ALTERAR SENHA</a> / 
+      <a href="/logout">ENCERRAR SEÇÃO</a> 
+    </span>
+  
+    </div>
+  </div>
 </div>
 </div>
+</div>
+
+</header>
+
+  <div class="label">
+    <h6>ADICIONAR POSTAGEM</h6>
+  </div>
+
+<form>
+
+<div id="criar-post">
+
+  <div class="mb-3 mt-3">
+
+    <input type="text" class="form-control" id="title" placeholder="Titulo">
+  </div>
+
+  <div class="mb-3">
+
+    <input type="slug" class="form-control" id="slug" placeholder="Slug">
+  </div>
+
+  <div class="mb-3">
+
+    <textarea class="form-control" id="body" rows="8"></textarea>
+  </div>
+ 
+  <div class="mb-3">
+
+    <input type="text" class="form-control" id="author" placeholder="Autor">
+  </div>
+  
+  <div class="mb-3">
+    <label for="image" class="form-label">Imagem</label>
+    <input type="url" class="form-control" id="image" placeholder='https://github.com/image.png'>
+  </div>
+
+</div>
+
 
 <div class="action-canvas" >
-   <div class="div1">
-     <button class="btn btn-success p-2">Salvar</button>
+
+    <div class="div1">
+        <button class="btn btn-success p-2">Salvar</button>
  
-          <button class="btn btn-danger p-2">Descartar</button>
+        <button class="btn btn-danger p-2">Descartar</button>
    </div> 
+   
    <div class="div2">
        <button class="btn btn-primary ml-2 p-2">Salvar e Adicionar outro</button>
    </div>
+
+   </form>
+
 </div>
+</main>
+
+
  
 
 {% endblock %}

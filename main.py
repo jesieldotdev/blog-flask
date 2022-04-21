@@ -82,7 +82,7 @@ def pagina_admin():
 
 @app.route('/login')
 def pagina_login():
-  return render_template('pagina_login.html')
+  return render_template('admin/pagina_login.html')
   
 @app.route('/auth_user', methods=['POST', 'GET'])
 def auth_user():

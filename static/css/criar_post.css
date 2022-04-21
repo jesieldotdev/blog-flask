@@ -1,22 +1,22 @@
 #criar-post{
- margin-left: 20px;
+ padding: 20px;
+ font-family: 'Poppins', sans-serif;
+ background-color: #282828;
 }
 
-label{
+/* .label{
   font-weight: 800;
   font-size: 18px;
-}
+} */
 
 .action-canvas{
   margin: 20px;
 }
 
 .div1{
-  
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
-  
 }
 
 .div2{
@@ -31,4 +31,40 @@ label{
 }
 
 
+#criar-post .form-control{
+  font-weight: 400;
+  font-size: 22px;
+  background-color: #363636;
+  color: #fafafa;
+}
 
+@media (max-width:500px) {
+  /* your conditional / responsive CSS inside this condition */
+  #criar-post .form-control:focus{
+  position: fixed;
+  bottom: 0;
+  max-width: 340px;
+  background-color: #363636;
+  color: #fafafa;
+}
+}
+
+.accordion-body{
+  background-color: var(--sec_color);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+#accordion-titulo{
+  color: #282828;
+  font-family: 'Poppins', sans-serif;
+}
+
+.accordion-body a{
+  color: #fafafa;
+}
+
+#accordion-bt  h4{
+  color: #282828;
+}

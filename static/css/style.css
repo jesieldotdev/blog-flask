@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&family=Poppins:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
     --radius-top:  0px;
@@ -15,6 +16,12 @@ body {
 
 a {
     text-decoration: none;
+}
+
+#nav-logo{
+    /* width: 32px;  */
+    height:  44px;
+    /* background-color: red; */
 }
 
 #header-post{
@@ -167,100 +174,9 @@ h3{
     padding: 0;
 }
 
-#painel-header{
-    background-color: #417690;
-    margin: 0;
-    padding: 0;
-
-}
-
-#painel-header h4{
-    color: #f5dd5d;
-}
-
-#painel-header #menu{
-    max-width: 700px;
-    color: #ffffcc;
-    display: inline-flex;
-    justify-items: center;
-    justify-content: center;
-    /*grid-column: 4;*/
-    font-size: 14px;
-    text-align: center;
-    padding: 20px;
-    /* background-color: #345345; */
-}
-
-#painel-header a{
-    text-decoration: underline;
-    text-decoration-color: #ffffcc;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 200;
-}
-
-#painel-main{
-    padding: 20px;
-    min-width: 300px;
-    max-width: 700px;
-}
-
-
-.label{
-    background-color:  #79aec8;
-    margin-bottom: 0;
-
-    
-}
-
-.label h6{
-    color: #ffffff;
-    text-align: left;
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 0;
-}
-
-#painel-main .dt{
-    /* background-color: #987567; */
-    padding: 10px;
-    color: #fffeee;
-    margin-top: 0;
-    font-size: 12px;
-    font-family: 'Roboto', sans-serif;
-
-}
-
-.dt-row {
-    display: flex;
-    justify-content: space-between;
-    /* padding-right: 10px; */
-    padding: 5px;
-    /* background-color: #876475; */
-    text-align: center;
-}
-
-.dt-row a{
-    padding-right: 10px;
-    color: #447e9b;
-}
-
-#painel-main hr{
-    margin: 1px;
-}
-
-.dt .type{
-    
-    font-weight: bold;
-}
-
-.action {
-
-}
 
 i img{
-   font-size: 28px;
+    height: 28px;
    color: red;
 }
 
@@ -288,5 +204,5 @@ svg{
 }
 
 .navbar-brand{
-    margin-left: 40px;
+    margin-left: 14px;
 }

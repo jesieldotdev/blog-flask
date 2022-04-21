@@ -3,15 +3,14 @@
 
 {% block content %}
 
-<header id="painel-header">
+<header class="pt-5" id="painel-header">
 	<h4 class="text-center">Painel de Administração</h4>
-	<div id="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for("index")}}">VER SITE</a> / <a href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
+	<div class="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for('index')}}">VER SITE</a> / <a href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
 </header>
 
-
 <main id="painel-main">
+	
 	<h5>Administração do Blog</h5>
-
 	<div>
 		<div class="label"><h6>AUTORIZAÇÃO E AUTENTICAÇÃO</h6></div>
 		<div class="dt">

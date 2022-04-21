@@ -1,0 +1,79 @@
+
+{% extends "base.html" %}
+{% block title %}Página de Login{% endblock %}
+
+{% block content %}
+<div class="login-canvas">
+
+  <div id="login-container" class="container bg-light text-dark ">
+
+  <header id="login-header">
+      <img id='login-logo' src="{{ url_for('static', filename='img/logo-1.png') }}">
+  </header>
+
+
+
+  <main class="form">
+    <form method="post" action="{{url_for('auth_user')}}">
+  
+      <div class="row mb-3 ">
+          <div>
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail3" name="email">
+          </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div>
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Senha</label>
+          <input type="password" class="form-control" id="inputPassword3" name="senha">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="">
+            <input class="form-check-input" type="checkbox" id="gridCheck1">
+            <label class="form-check-label" for="gridCheck1">Lembrar</label>
+        </div>
+      </div>
+
+ 
+      <div class="button-control">
+        <button id="form-button" value="Submit" type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+      
+    </form>
+  </main>
+
+
+ <hr style="max-width: 300px;"  class="mx-auto mt-5 mb-0 "/>
+<footer  class="mx-auto w-50 mt-2">
+
+  <div class="d-flex">
+    
+    <a  href="https://github.com/jesiel364" class="parent">
+      <i>
+        <img   src="{{url_for('static', filename='svgs/github-fill.svg') }}"/></img>
+      </i>
+    </a> 
+
+    <a  href="https://github.com/jesiel364" class="parent">
+      <i>
+        <img   src="{{url_for('static', filename='svgs/instagram-fill.svg') }}"/></img>
+      </i>
+    </a> 
+
+    <a  href="https://github.com/jesiel364" class="parent">
+      <i>
+        <img   src="{{url_for('static', filename='svgs/pinterest-fill.svg') }}"/></img>
+      </i>
+    </a> 
+
+  </div>
+
+    
+</footer>
+<p class="text-center mt-2">©2022</p>
+</div>
+</div>
+{% endblock %}
