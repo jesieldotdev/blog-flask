@@ -7,15 +7,15 @@ def init_auth_routes(app):
     def login():
         if request.method == 'POST':
             email = request.form['email']
-            senha = request.form['senha']
-            lembrar = bool(request.form.get('lembrar'))
+            password = request.form['password']
+            remember = bool(request.form.get('remember'))
             user = AuthUser.query.filter_by(email=email).first()
             
-            if user and user.password == senha:  # Verifique se a senha é a correta
+            if user and user.password == password:  # Verifique se a senha é a correta
                 session['email'] = email
                 flash(f"Bem-vindo(a), {user.username}", "success")
-                if lembrar:
-                    session['nome'] = user.username
+                if remember:
+                    session['username'] = user.username
                 return redirect(url_for("index"))
             flash('Usuário ou senha inválidos.', "danger")
         return render_template("admin/pagina_login.html")
@@ -83,6 +83,10 @@ def init_auth_routes(app):
     def listar_posts():
         posts = BlogPost.query.order_by(BlogPost.id.desc()).all()
         return render_template('admin/listar_posts.html', posts=posts)
+    @app.route('/admin/users_list', methods=["GET"])
+    def users_list():
+        users = AuthUser.query.order_by(AuthUser.id.desc()).all()
+        return render_template('admin/users_list.html', users=users)
 
     @app.route('/admin/atualizar_e_adicionar_outro/<int:post_id>', methods=["POST"])
     def update_and_add_another(post_id):

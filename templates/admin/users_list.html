@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Usuários{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listar Usuários</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <!-- <th>Ações</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <!-- <td>
+                    <a href="{{ url_for('edit_user', user_id=user.id) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger">Descartar</a>
+                </td> -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

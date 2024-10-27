@@ -12,12 +12,17 @@ class BlogPost(db.Model):
     image = db.Column(db.String)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
 
+
 class AuthUser(db.Model):
     __tablename__ = 'auth_user'
 
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String, nullable=False)
-    
+    username = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False)
+    isAdmin = db.Column(db.Boolean, nullable=False)
+
+
 class BlogCategories(db.Model):
     __tablename__ = 'blog_categories'
 
