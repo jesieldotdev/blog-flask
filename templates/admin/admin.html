@@ -5,60 +5,65 @@
 
 <header class="pt-5" id="painel-header">
 	<h4 class="text-center">Painel de Administração</h4>
-	<div class="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for('index')}}">VER SITE</a> / <a href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
+	<div class="menu"><span>Bem vindo(a), {{session.nome}} <a href="{{url_for('index')}}">VER SITE</a> / <a
+				href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
 </header>
 
 <main id="painel-main">
-	
+
 	<h5>Administração do Blog</h5>
 	<div>
-		<div class="label"><h6>AUTORIZAÇÃO E AUTENTICAÇÃO</h6></div>
+		<div class="label">
+			<h6>AUTORIZAÇÃO E AUTENTICAÇÃO</h6>
+		</div>
 		<div class="dt">
 			<div class="dt-row">
 				<a class="type" href="">Grupos</a>
 				<div class="action">
-					<a  href="">+Adicionar</a>
+					<a href="">+Adicionar</a>
 					<a href="">Modificar</a>
 				</div>
-				
+
 			</div>
 			<hr>
 			<div class="dt-row">
-				<a class="type" href="">Usuários</a>
+				<a class="type" href="{{url_for('users_list')}}">Usuários</a>
 				<div class="action">
-					<a  href="">+Adicionar</a>
+					<a href="">+Adicionar</a>
 					<a href="">Modificar</a>
 				</div>
 			</div>
-			
-			
+
+
 		</div>
-		
+
 
 	</div>
 	<div>
-		<div class="label"><h6>Blog</h6></div>
+		<div class="label">
+			<h6>Blog</h6>
+		</div>
 		<div class="dt">
 			<div class="dt-row">
 				<a class="type" href="">Categorias</a>
 				<div class="action">
-					<a  href="">+Adicionar</a>
+					<a href="">+Adicionar</a>
 					<a href="">Modificar</a>
 				</div>
-				
+
 			</div>
 			<hr>
 			<div class="dt-row">
-				<a class="type" href="{{ url_for('listar_posts') }}">Posts</a>
+				<a class="type" href="{{ url_for('post_list') }}">Posts</a>
 				<div class="action">
-					<a  href="{{ url_for('create_post') }}">+Adicionar</a>
+					<a href="{{ url_for('create_post') }}">+Adicionar</a>
 					<a href="">Modificar</a>
 				</div>
 			</div>
-			
-			
+
+
 		</div>
-		
+
 
 	</div>
 </main>

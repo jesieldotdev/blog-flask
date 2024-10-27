@@ -21,7 +21,7 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.author }}</td>
                 <td>
-                    <a href="{{ url_for('editar_post', post_id=post.id) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn btn-warning">Editar</a>
                     <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger">Descartar</a>
                 </td>
             </tr>
