@@ -1,82 +1,66 @@
-#criar-post{
- padding: 20px;
- font-family: 'Poppins', sans-serif;
- background-color: var(--light_sec);
+#criar-post {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light_sec);
 }
 
-/* .label{
-  font-weight: 800;
-  font-size: 18px;
-} */
-
-.action-canvas{
+.action-canvas {
   margin: 20px;
 }
 
-.div1{
+.div1 {
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
 }
 
-.div2{
-  justify-content: center;
+.div2 {
   display: flex;
-  
+  justify-content: center;
 }
 
-#menu a{
+#menu a {
   font-weight: 100;
   font-size: 12px;
 }
 
-
-#criar-post .form-control{
+#criar-post .form-control {
   font-weight: 400;
   font-size: 14px;
   background-color: var(--light_pri);
   color: #fafafa;
 }
 
-@media (max-width:500px) {
-  /* your conditional / responsive CSS inside this condition */
-  #criar-post .form-control:focus{
-  position: fixed;
-  bottom: 10px;
-  max-width: 360px;
-  background-color: #363636;
-  color: #fafafa;
-}
+@media (max-width: 500px) {
+  #criar-post .form-control:focus {
+    position: fixed;
+    bottom: 10px;
+    max-width: 360px;
+    background-color: #363636;
+    color: #fafafa;
+  }
 }
 
-.accordion-body{
+.accordion-body {
   background-color: var(--sec_color);
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-#criar-post #title{
+#criar-post #title {
   font-size: 16px;
 }
 
-#slug, #body, #author, #image{
+#slug,
+#body,
+#author,
+#image {
   font-size: 14px;
 }
 
-#accordion-titulo{
-  color: var(--dark_pri);
-  font-family: 'Poppins', sans-serif;
-}
 
-.accordion-body a{
-  color: #fafafa;
-}
 
-#accordion-bt {
-  background-color: var(--light_pri);
-} 
-
-accordionFlushExample{
+#accordionFlushExample {
   margin: 10px;
-} 
+}

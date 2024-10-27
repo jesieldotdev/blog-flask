@@ -3,66 +3,45 @@
 
 {% block content %}
 
-<header class="pb-2" id="painel-header">
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-                <button id="accordion-bt" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    <h3 id="accordion-titulo">Painel de Administração</h3>
-                </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    <div class="menu">
-                        <span>Bem vindo(a), {{ session.nome }}
-                            <a href="{{ url_for('index') }}">VER SITE</a> / 
-                            <a href="">ALTERAR SENHA</a> / 
-                            <a href="/logout">ENCERRAR SESSÃO</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+{% include 'components/header.html' %}
 
-<div class="label">
-    <h6>ADICIONAR USUÁRIO</h6>
+<div class="label text-center my-5">
+    <h6 class="display-6">ADICIONAR USUÁRIO</h6>
 </div>
 
-<form method="POST" action="{{ url_for('create_user') }}">
-    <div id="criar-usuario">
+<div class="container">
+    <form class="p-4 border rounded shadow" method="POST" action="{{ url_for('create_user') }}">
+        <div id="criar-usuario">
 
-        <div class="mb-3 mt-3">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Nome de Usuário" required>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nome de Usuário" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="isAdmin" class="form-label">Admin</label>
+                <select class="form-select" id="isAdmin" name="isAdmin">
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
+            </div>
+
         </div>
 
-        <div class="mb-3">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        <div class="action-canvas d-flex justify-content-between mt-4">
+            <div class="div1">
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <a href="{{ url_for('index') }}" class="btn btn-danger">Descartar</a>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="isAdmin" class="form-label">Admin</label>
-            <select class="form-select" id="isAdmin" name="isAdmin">
-                <option value="true">Sim</option>
-                <option value="false">Não</option>
-            </select>
-        </div>
-
-    </div>
-
-    <div class="action-canvas">
-        <div class="div1">
-            <button class="btn btn-success p-2">Salvar</button>
-            <a href="{{ url_for('index') }}" class="btn btn-danger p-2">Descartar</a>
-        </div> 
-        
-    
-    </div>
-</form>
+    </form>
+</div>
 
 {% endblock %}

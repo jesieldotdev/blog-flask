@@ -18,7 +18,7 @@ def init_users_routes(app):
             email = request.form['email']
             password = request.form['password']
             isAdmin = request.form['isAdmin'] == 'true'
-            
+
             # Supondo que você tenha um campo para o ID do autor
 
             new_user = AuthUser(username=username, email=email,
@@ -30,10 +30,27 @@ def init_users_routes(app):
 
         return render_template('admin/user/create_user.html')
 
+    
     @app.route('/admin/edit_user/<int:user_id>', methods=["GET"])
     def edit_user(user_id):
-        user = BlogPost.query.get(user_id)
+        user = AuthUser.query.get(user_id)
         if user is None:
             flash('Usuário não encontrada.', 'warning')
             return redirect(url_for('users_list'))
-        return render_template('admin/users/user.html', user=user)
+        return render_template('admin/user/edit_user.html', user=user)
+
+    @app.route('/admin/update_user/<int:user_id>', methods=["POST"])
+    def update_user(user_id):
+        user = AuthUser.query.get(user_id)
+        if user is None:
+            flash('Usuário não encontrada.', 'warning')
+            return redirect(url_for('users_list'))
+
+        user.username = request.form.get('username')
+        user.email = request.form.get('email')
+        user.password = request.form.get('password')
+        user.isAdmin = request.form.get('isAdmin') == 'true'
+
+        db.session.commit()
+        flash('Usuário atualizada com sucesso!', 'success')
+        return redirect(url_for('users_list'))
