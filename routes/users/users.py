@@ -30,7 +30,6 @@ def init_users_routes(app):
 
         return render_template('admin/user/create_user.html')
 
-    
     @app.route('/admin/edit_user/<int:user_id>', methods=["GET"])
     def edit_user(user_id):
         user = AuthUser.query.get(user_id)
@@ -48,7 +47,8 @@ def init_users_routes(app):
 
         user.username = request.form.get('username')
         user.email = request.form.get('email')
-        user.password = request.form.get('password')
+        if request.form.get('password') != '':
+            user.password = request.form.get('password')
         user.isAdmin = request.form.get('isAdmin') == 'true'
 
         db.session.commit()
