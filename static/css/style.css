@@ -1,155 +1,187 @@
+Claro! Vou melhorar os paddings e margins para proporcionar uma melhor espaçamento e legibilidade. Aqui está uma versão atualizada do seu CSS com ajustes nos espaçamentos:
+
 {% load static %}
 
+/* Font imports */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&family=Poppins:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+/* Root Variables */
 :root {
-    --radius-top:  0px;
+    --primary-font: 'M PLUS 1', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --dark-color: #282868;
+    --light-grey: #f9f9f9;
+    --grey-color: grey;
+    --hover-color: red;
+    --border-radius: 0px;
 }
 
+/* General Styles */
 body {
-   
-    font-family: 'M PLUS 1', sans-serif;
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
+    color: black; /* Default link color */
 }
 
-#nav-logo{
-    /* width: 32px;  */
-    height:  44px;
-    /* background-color: red; */
+/* Headings Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--secondary-font);
+    color: var(--dark-color);
+    font-weight: 600;
+    margin: 0 0 1rem 0; /* Adds margin below headings */
 }
 
-#header-post{
+p {
+    font-family: var(--primary-font);
+    margin: 0 0 1rem 0; /* Adds margin below paragraphs */
+    padding: 0 1rem; /* Padding horizontal para melhorar a legibilidade */
+}
+
+/* Horizontal Rule */
+hr {
+    color: var(--grey-color);
+    margin: 1.5rem 0; /* Adds vertical margin around hr */
+}
+
+/* Header and Title Styles */
+#header-post {
     width: 25rem;
+    margin: 2rem auto; /* Center the header with margin */
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Roboto', sans-serif;
-  color: #282868
-  font-weight: 600;
-  display: absolute;
-  /*font-style: italic;*/
-  
-}
-
-p{
-  font-family: 'M PLUS 1', sans-serif;
-}
-
-#post-title{
+#post-title {
     color: dark;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--secondary-font);
     font-size: 36px;
-    display: absolute;
     font-weight: 800;
+    margin-bottom: 1rem; /* Adds margin below the title */
 }
 
-
-#autor{
-    font-family: 'Roboto', sans-serif;
-    color: grey ;
-    font-style: bold;
+/* Author Styles */
+#autor {
+    font-family: var(--secondary-font);
+    color: var(--grey-color);
+    font-weight: bold; /* Use font-weight instead of font-style for bold */
+    margin-bottom: 1rem; /* Adds margin below author name */
 }
 
-hr{
-    color: grey;
-}
-
-#overlay{
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-}
-
-#post-img{
+/* Image and Overlay Styles */
+#post-img {
     position: relative;
     text-align: center;
     color: white;
     max-width: 800px;
     margin: auto;
-    display: flex;
-    margin-top: 0;
+    padding: 1rem; /* Padding around images */
 }
 
-a{
-    text-decoration: none;
-    text-indent: inherit;
-    color: black;
+#overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
 
-
-
-footer{
+/* Footer Styles */
+footer {
     justify-content: center;
     display: flex;
     width: 100%;
+    padding: 1rem 0; /* Adds padding to top and bottom of the footer */
 }
 
-li{
+/* List Styles */
+li {
     font-weight: bold;
+    margin-bottom: 0.5rem; /* Adds margin below list items */
 }
 
-@cap{
-    color: red;
-}
-
+/* Blockquote Styles */
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote: before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
+    background: var(--light-grey);
+    border-left: 10px solid #ccc;
+    margin: 1.5em 0; /* Adds vertical margin around blockquote */
+    padding: 1rem; /* Adds padding inside blockquote */
+    quotes: "\201C""\201D""\2018""\2019";
 }
 
-pre, code{
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+/* Code Styles */
+pre, code {
     background-color: #282828;
     color: #d4d4d4;
     border-radius: 12px;
     padding: 10px;
-    text-align: start;
     margin-bottom: 10px;
-    display: flex-start;
     box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7);
 }
 
-h2{
-    margin-top: 10px;
+/* Headings Styles */
+h2 {
+    margin: 1.5rem 0; /* Adds vertical margin around h2 */
     font-weight: 800;
     font-size: 30px;
 }
 
-h3{
-    /*font-size: 20px;*/
+h3 {
     font-weight: 100;
-    
+    margin: 1rem 0; /* Adds vertical margin around h3 */
 }
 
-
-
-.card{
-    /*box-shadow: 8px 13px 29px 2px rgba(0,0,0,0.7);*/
-    padding-top: 0;
-    border-top-left-radius: var(--radius-top);
-    border-top-right-radius: var(--radius-top);
+/* Card Styles */
+.card {
+    padding: 1rem; /* Padding around card */
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin-bottom: 1.5rem; /* Margin below each card */
 }
 
-/*.card:hover{
+/* Card Image Styles */
+.card img {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: 0;
+}
+
+/* SVG Styles */
+svg {
+    fill: var(--hover-color);
+}
+
+/* Navigation Styles */
+#nav-logo {
+    height: 44px;
+}
+
+#nav-list {
+    margin-right: 40px;
+}
+
+.navbar-brand {
+    margin-left: 14px;
+}
+
+/* Animation Styles (uncomment to use) */
+/*
+.card:hover {
     animation-name: card-move;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -157,52 +189,11 @@ h3{
     animation-iteration-count: infinite;
     animation-direction: alternate;
     position: relative;
-
-}*/
-
-@keyframes card-move{
-
-    0%   {left:0px; top:0px;}
-  50%  {box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7); /*left:5px; top:-5px;*/}
-  
-
 }
 
-.card img{
-    border-top-left-radius: var(--radius-top);
-    border-top-right-radius: var(--radius-top);
-    padding: 0;
+@keyframes card-move {
+    0% { left: 0px; top: 0px; }
+    50% { box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7); }
 }
+*/
 
-
-i img{
-    height: 28px;
-   color: red;
-}
-
-/* .parent{
-  color: #876678;
-
-}
-.parent:hover{
-  color: #876678;
-  background: #85c1fc;
-}
-
-.parent svg path{
-  fill: currentColor;
-} */
-
-svg{
-     
-    fill: red;
-}
-
-
-#nav-list{
-    margin-right: 40px;
-}
-
-.navbar-brand{
-    margin-left: 14px;
-}
