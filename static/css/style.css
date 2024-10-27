@@ -1,5 +1,3 @@
-Claro! Vou melhorar os paddings e margins para proporcionar uma melhor espaçamento e legibilidade. Aqui está uma versão atualizada do seu CSS com ajustes nos espaçamentos:
-
 {% load static %}
 
 /* Font imports */
@@ -14,8 +12,8 @@ Claro! Vou melhorar os paddings e margins para proporcionar uma melhor espaçame
     --dark-color: #282868;
     --light-grey: #f9f9f9;
     --grey-color: grey;
-    --hover-color: red;
-    --border-radius: 0px;
+    --hover-color: #ef5350;
+    --border-radius: 10px;
 }
 
 /* General Styles */
@@ -23,177 +21,112 @@ body {
     font-family: var(--primary-font);
     margin: 0;
     padding: 0;
+    background-color: #f2f2f5;
 }
 
 a {
     text-decoration: none;
-    color: black; /* Default link color */
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
-/* Headings Styles */
+a:hover {
+    color: var(--hover-color);
+}
+
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondary-font);
     color: var(--dark-color);
     font-weight: 600;
-    margin: 0 0 1rem 0; /* Adds margin below headings */
+    margin: 0 0 1rem 0;
 }
 
 p {
     font-family: var(--primary-font);
-    margin: 0 0 1rem 0; /* Adds margin below paragraphs */
-    padding: 0 1rem; /* Padding horizontal para melhorar a legibilidade */
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
 }
 
-/* Horizontal Rule */
-hr {
-    color: var(--grey-color);
-    margin: 1.5rem 0; /* Adds vertical margin around hr */
-}
-
-/* Header and Title Styles */
+/* Header */
 #header-post {
     width: 25rem;
-    margin: 2rem auto; /* Center the header with margin */
+    margin: 2rem auto;
+    text-align: center;
 }
 
 #post-title {
-    color: dark;
+    color: var(--dark-color);
     font-family: var(--secondary-font);
     font-size: 36px;
     font-weight: 800;
-    margin-bottom: 1rem; /* Adds margin below the title */
+    margin-bottom: 1rem;
 }
 
-/* Author Styles */
+/* Author */
 #autor {
     font-family: var(--secondary-font);
     color: var(--grey-color);
-    font-weight: bold; /* Use font-weight instead of font-style for bold */
-    margin-bottom: 1rem; /* Adds margin below author name */
-}
-
-/* Image and Overlay Styles */
-#post-img {
-    position: relative;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    margin: auto;
-    padding: 1rem; /* Padding around images */
-}
-
-#overlay {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-}
-
-/* Footer Styles */
-footer {
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    padding: 1rem 0; /* Adds padding to top and bottom of the footer */
-}
-
-/* List Styles */
-li {
     font-weight: bold;
-    margin-bottom: 0.5rem; /* Adds margin below list items */
 }
 
-/* Blockquote Styles */
-blockquote {
-    background: var(--light-grey);
-    border-left: 10px solid #ccc;
-    margin: 1.5em 0; /* Adds vertical margin around blockquote */
-    padding: 1rem; /* Adds padding inside blockquote */
-    quotes: "\201C""\201D""\2018""\2019";
-}
-
-blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-blockquote p {
-    display: inline;
-}
-
-/* Code Styles */
-pre, code {
-    background-color: #282828;
-    color: #d4d4d4;
-    border-radius: 12px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7);
-}
-
-/* Headings Styles */
-h2 {
-    margin: 1.5rem 0; /* Adds vertical margin around h2 */
-    font-weight: 800;
-    font-size: 30px;
-}
-
-h3 {
-    font-weight: 100;
-    margin: 1rem 0; /* Adds vertical margin around h3 */
-}
-
-/* Card Styles */
+/* Blog Cards */
 .card {
-    padding: 1rem; /* Padding around card */
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    margin-bottom: 1.5rem; /* Margin below each card */
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Card Image Styles */
-.card img {
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    padding: 0;
-}
-
-/* SVG Styles */
-svg {
-    fill: var(--hover-color);
-}
-
-/* Navigation Styles */
-#nav-logo {
-    height: 44px;
-}
-
-#nav-list {
-    margin-right: 40px;
-}
-
-.navbar-brand {
-    margin-left: 14px;
-}
-
-/* Animation Styles (uncomment to use) */
-/*
 .card:hover {
-    animation-name: card-move;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-delay: .1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    position: relative;
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes card-move {
-    0% { left: 0px; top: 0px; }
-    50% { box-shadow: 8px 13px 18px -11px rgba(0,0,0,0.7); }
+.card-img-top {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
-*/
 
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+/* Navigation */
+.navbar-brand, #nav-list {
+    margin: 0 20px;
+}
+
+/* Button */
+.btn-primary {
+    background-color: var(--dark-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+}

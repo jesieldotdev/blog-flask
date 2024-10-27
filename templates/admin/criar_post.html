@@ -34,33 +34,33 @@
     <h6>ADICIONAR POSTAGEM</h6>
   </div>
 
-<form>
+<form method="POST" action="{{ url_for('create_post') }}">
 
 <div id="criar-post">
 
   <div class="mb-3 mt-3">
 
-    <input type="text" class="form-control" id="title" placeholder="Titulo">
+    <input type="text" class="form-control" id="title" name="title" placeholder="Titulo">
   </div>
 
   <div class="mb-3">
 
-    <input type="slug" class="form-control" id="slug" placeholder="Slug">
+    <input type="slug" class="form-control" id="slug" name="slug" placeholder="Slug">
   </div>
 
   <div class="mb-3">
 
-    <textarea class="form-control" id="body" rows="8"></textarea>
+    <textarea class="form-control" id="body" name="body" rows="8"></textarea>
   </div>
  
   <div class="mb-3">
 
-    <input type="text" class="form-control" id="author" placeholder="Autor">
+    <input type="text" class="form-control" id="author" name="author_id" placeholder="Autor">
   </div>
   
   <div class="mb-3">
     <label for="image" class="form-label">Imagem</label>
-    <input type="url" class="form-control" id="image" placeholder='https://github.com/image.png'>
+    <input type="url" class="form-control" id="image" name="image" placeholder='https://github.com/image.png'>
   </div>
 
 </div>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar Postagens{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listar Postagens</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.author }}</td>
+                <td>
+                    <a href="{{ url_for('editar_post', post_id=post.id) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger">Descartar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

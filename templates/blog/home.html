@@ -13,7 +13,7 @@
     {% for post in posts %}
     <div class="col">
       <div class="card h-100 border-0">
-        <a href="{{ url_for('ver_post', slug=post.slug) }}">
+        <a href="{{ url_for('see_post', slug=post.slug) }}">
           <img src="{{ post.image }}" class="card-img-top rounded-lg" alt="{{ post.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
@@ -27,7 +27,8 @@
   </div>
   
   <div class="text-center">
-    <a class="btn btn-primary" href="{{ url_for('page', post_num=4) }}">Próxima Página</a>
+    <a class="btn btn-primary" href="{{ url_for('page', post_num=2) }}">Próxima Página</a>
+
   </div>
 </div>
 

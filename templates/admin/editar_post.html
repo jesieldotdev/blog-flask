@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Modificar Post{% endblock %}
+
+{% block content %}
+
+<header class="pb-2" id="painel-header">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button id="accordion-bt" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <h3 id="accordion-titulo">Painel de Administração</h3>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="menu">
+                        <span>Bem vindo(a), {{session.nome}}
+                            <a href="{{url_for('index')}}">VER SITE</a> / 
+                            <a href="">ALTERAR SENHA</a> / 
+                            <a href="/logout">ENCERRAR SESSÃO</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="label">
+    <h6>MODIFICAR POSTAGEM</h6>
+</div>
+
+<form method="POST" action="{{ url_for('update_post', post_id=post.id) }}">
+    <div id="criar-post">
+        <div class="mb-3 mt-3">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{ post.title }}">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" value="{{ post.slug }}">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="body" name="body" rows="8">{{ post.body }}</textarea>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="author" name="author" placeholder="Autor" value="{{ post.author }}">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Imagem</label>
+            <input type="url" class="form-control" id="image" name="image" placeholder='https://github.com/image.png' value="{{ post.image }}">
+        </div>
+    </div>
+
+    <div class="action-canvas">
+        <div class="div1">
+            <button type="submit" class="btn btn-success p-2">Salvar Alterações</button>
+            <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger p-2">Descartar</a>
+        </div>
+        <div class="div2">
+            <button type="submit" formaction="{{ url_for('update_and_add_another', post_id=post.id) }}" class="btn btn-primary ml-2 p-2">Salvar e Modificar Outro</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
