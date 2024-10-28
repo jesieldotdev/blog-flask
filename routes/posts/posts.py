@@ -64,6 +64,8 @@ def init_posts_routes(app):
 
     @app.route('/admin/descartar/<int:post_id>', methods=["GET"])
     def discard_changes(post_id):
+        BlogPost.query.filter(BlogPost.id == post_id).delete()
+        db.session.commit()
         flash('Alterações descartadas.', 'info')
         return redirect(url_for('post_list'))
     

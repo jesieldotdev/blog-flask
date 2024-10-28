@@ -27,10 +27,11 @@
 #criar-post .form-control {
   font-weight: 400;
   font-size: 14px;
-  background-color: var(--light_pri);
-  color: #fafafa;
+  background-color: #efefef;
+  color: #282828;
+  padding: 8px 12px;
 }
-
+/* 
 @media (max-width: 500px) {
   #criar-post .form-control:focus {
     position: fixed;
@@ -39,7 +40,7 @@
     background-color: #363636;
     color: #fafafa;
   }
-}
+} */
 
 .accordion-body {
   background-color: var(--sec_color);
