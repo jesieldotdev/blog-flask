@@ -4,7 +4,7 @@
 {% block content %}
 
 <section class="container-fluid">
-  <h2 class="pl-2">Tecnologia</h2>
+  {% include 'components/scroll_buttons.html' %}
 </section>
 
 <div class="container">
@@ -18,7 +18,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
           </a>
-            <small class="date text-muted">{{ post.created_at}}</small>
+            <small class="date text-muted">{{ post.created_at.strftime("%d/%m/%Y às %H:%M")}}</small>
           </div>
         </div>
       </div>

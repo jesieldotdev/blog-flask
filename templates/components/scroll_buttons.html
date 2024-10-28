@@ -1,0 +1,34 @@
+<style>
+    .scrolling-categories {
+        overflow-x: auto;
+        
+        white-space: nowrap;
+        -ms-overflow-style: none;  /* Para Internet Explorer e Edge */
+        scrollbar-width: none;  /* Para Firefox */
+    }
+
+    .scrolling-categories::-webkit-scrollbar {
+        display: none;  /* Para Chrome, Safari e Opera */
+    }
+
+    .category-item {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+        border-radius: 50px; /* Borda arredondada */
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="scrolling-categories">
+        <div class="category-item btn btn-primary">Tecnologia</div>
+        <div class="category-item btn btn-primary">Desenvolvimento</div>
+        <div class="category-item btn btn-primary">Educação</div>
+        <div class="category-item btn btn-primary">Saúde</div>
+        <div class="category-item btn btn-primary">Música</div>
+        <div class="category-item btn btn-primary">Arte</div>
+        <div class="category-item btn btn-primary">Negócios</div>
+        <div class="category-item btn btn-primary">Ciência</div>
+        <div class="category-item btn btn-primary">Literatura</div>
+    </div>
+</div>

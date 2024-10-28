@@ -9,7 +9,7 @@
 <img id="post-img" style="margin: auto;" class="card-img-top rounded-lg border-0  mt-6 mb-4  w-100" src="{{post.image}}">
 <div style="min-width: 300px; max-width: 800px;" class="card-body container-fluid">
 
-<h2 id="post-title" class="card-title text-center mb-4 ">{{post.title}}</h2>
+<h2  class="title text-center mb-4 fw-extra-bold">{{post.title}}</h2>
  
 
   
@@ -17,11 +17,22 @@
 
 <div id="info" style="margin: auto;" class="">
 <hr>
-<h4 class="text-black-50 mb-0" id="autor">Por {{ post.author.username }}</h4>
+<div class="d-flex justify-content-between">
+  
+<p class="fw-bold " id="">{{ post.author.username }}</p>
+
+{% if post.author.isAdmin %}
+<a href="{{url_for('edit_post', post_id=post.id)}}">Editar post</a>
+{% endif %}
+</div>
+
 <div class=" ">
 <small class="mt-0">
-  <strong>{{ post.created_at }}</strong> às {{post.hora  }}
+
+    {{ post.created_at.strftime("%d/%m/%Y") }} às
+    {{ post.created_at.strftime("%H:%M") }}
 </small><br>
+
 <small class="mt-0">
 	<a href="#"><span class="badge rounded-pill bg-dark p-2 mt-1 mb-1 ">{{ post.category }}</span></a>
 </small>
