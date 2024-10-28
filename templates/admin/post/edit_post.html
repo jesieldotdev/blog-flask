@@ -20,9 +20,15 @@
         <div class="mb-3">
             <textarea class="form-control" id="body" name="body" rows="8">{{ post.body }}</textarea>
         </div>
-        <div class="mb-3">
-            <input type="text" class="form-control" id="author" name="author" placeholder="Autor" value="{{ post.author }}">
-        </div>
+
+ <div class="mb-3">
+    <label for="author_id" class="form-label">Autor</label>
+    <select class="form-select" id="author_id" name="author_id">
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+</div>
         <div class="mb-3">
             <label for="image" class="form-label">Imagem</label>
             <input type="url" class="form-control" id="image" name="image" placeholder='https://github.com/image.png' value="{{ post.image }}">

@@ -29,12 +29,14 @@ def init_posts_routes(app):
     
 
     @app.route('/admin/edit_post/<int:post_id>', methods=["GET"])
+    
     def edit_post(post_id):
+        users = AuthUser.query.order_by(AuthUser.id.desc()).all()
         post = BlogPost.query.get(post_id)
         if post is None:
             flash('Postagem não encontrada.', 'warning')
             return redirect(url_for('post_list'))
-        return render_template('admin/post/edit_post.html', post=post)
+        return render_template('admin/post/edit_post.html', post=post, users=users)
     
     
     
@@ -50,7 +52,7 @@ def init_posts_routes(app):
         post.slug = request.form.get('slug')
         post.body = request.form.get('body')
         # Assumindo que o autor seja fornecido no formulário
-        post.author_id = request.form.get('author')
+        post.author_id = request.form.get('author_id')
         post.image = request.form.get('image')
 
         db.session.commit()
