@@ -1,12 +1,13 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from db import db
 # Certifique-se de que seus modelos estão definidos em um arquivo models.py
-from models.__init_ import  BlogPost
+from models.__init_ import  BlogPost, AuthUser
 
 
 def init_posts_routes(app):
     @app.route("/admin/create_post", methods=["GET", "POST"])
     def create_post():
+        users = AuthUser.query.order_by(AuthUser.id.desc()).all()
         if request.method == 'POST':
             title = request.form['title']
             slug = request.form['slug']
@@ -22,13 +23,13 @@ def init_posts_routes(app):
             flash('Postagem criada com sucesso!', 'success')
             return redirect(url_for('post_list'))
 
-        return render_template('admin/post/create_post.html')
+        return render_template('admin/post/create_post.html', users=users)
     
     
     
 
     @app.route('/admin/edit_post/<int:post_id>', methods=["GET"])
-    def editar_post(post_id):
+    def edit_post(post_id):
         post = BlogPost.query.get(post_id)
         if post is None:
             flash('Postagem não encontrada.', 'warning')

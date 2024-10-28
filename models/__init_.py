@@ -1,4 +1,5 @@
 from db import db
+from sqlalchemy.orm import relationship
 
 
 class BlogPost(db.Model):
@@ -9,6 +10,7 @@ class BlogPost(db.Model):
     slug = db.Column(db.String, unique=True, nullable=False)
     body = db.Column(db.Text, nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey('auth_user.id'))
+    author = relationship("AuthUser", backref="posts")
     image = db.Column(db.String)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
 
