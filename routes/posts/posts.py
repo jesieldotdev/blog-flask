@@ -31,7 +31,7 @@ def init_posts_routes(app):
     @app.route('/admin/edit_post/<int:post_id>', methods=["GET"])
     
     def edit_post(post_id):
-        users = AuthUser.query.order_by(AuthUser.id.desc()).all()
+        users = AuthUser.query.order_by(AuthUser.id).all()
         post = BlogPost.query.get(post_id)
         if post is None:
             flash('Postagem não encontrada.', 'warning')
