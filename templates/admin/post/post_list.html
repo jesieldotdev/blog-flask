@@ -7,6 +7,9 @@
 {% block content %}
 <div class="container">
     <h1>Listar Postagens</h1>
+      <div class="">
+                <a href="{{ url_for('create_post') }}" class="btn btn-info">Novo Post</a>
+            </div>
     <table class="table">
         <thead>
             <tr>
@@ -29,10 +32,9 @@
             </tr>
             {% endfor %}
             
-            <div class="">
-                <a href="{{ url_for('create_post') }}" class="btn btn-info">Novo Post</a>
-            </div>
+          
         </tbody>
     </table>
+    
 </div>
 {% endblock %}

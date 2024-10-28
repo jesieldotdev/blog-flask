@@ -54,3 +54,13 @@ def init_users_routes(app):
         db.session.commit()
         flash('Usuário atualizada com sucesso!', 'success')
         return redirect(url_for('users_list'))
+    
+    @app.route('/admin/delete_user/<int:user_id>', methods=["GET"])
+    def delete_user(user_id):
+        AuthUser.query.filter(AuthUser.id == user_id).delete()
+        db.session.commit()
+        flash('Usuario removido.', 'warning')
+        return redirect(url_for('users_list'))
+    
+    
+    
