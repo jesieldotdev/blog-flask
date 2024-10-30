@@ -2,7 +2,11 @@ from flask import render_template, request, flash, redirect, url_for, session
 from db import db
 from models.__init_ import BlogPost, AuthUser, BlogCategories  # Certifique-se de que seus modelos estão definidos em um arquivo models.py
 
+
 def init_blog_routes(app):
+    @app.errorhandler(404)
+    def page_not_found(e):
+      return render_template("404.html")
     @app.route("/")
     def index():
         posts = BlogPost.query.order_by(BlogPost.id.desc()).limit(4).all()

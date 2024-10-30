@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 4em;
+            font-weight: 600;
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: .8em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1em;
+            font-weight: 600;
+            color: #fff;
+            background-color:  #9609b7;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <img id="nav-logo" src="{{ url_for('static', filename='img/logo-variation.png') }}" alt="Logo" class="d-inline-block align-text-center p-0"/>
+        <h1>404</h1>
+        <h2>Página Não Encontrada</h2>
+        <p>A página que você está procurando não existe ou foi movida.</p>
+        <a href="/">Voltar para a Página Inicial</a>
+    </div>
+</body>
+</html>
