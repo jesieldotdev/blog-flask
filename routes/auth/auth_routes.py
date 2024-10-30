@@ -30,12 +30,18 @@ def init_auth_routes(app):
         if not session.get('email'):
             flash('Você não está logado.', 'warning')
             return redirect(url_for('login'))
+        elif(not AuthUser.check_if_user_admin(session["email"])):
+          flash("Você não está autorizado.", "danger")
+          return redirect(url_for("index"))
         return render_template('admin/admin.html')
 
 
 
     @app.route('/admin/atualizar_e_adicionar_outro/<int:post_id>', methods=["POST"])
     def update_and_add_another(post_id):
+      if(not AuthUser.check_if_user_admin(session["email"])):
+        flash("Você não está autorizado.", "danger")
+        return redirect(url_for("index"))
         # Aqui você pode implementar a lógica para adicionar outro post.
         # Para o exemplo, vamos só redirecionar de volta para a edição do mesmo.
         flash('Postagem atualizada com sucesso! Você pode adicionar outro post agora.', 'success')

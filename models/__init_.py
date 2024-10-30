@@ -26,7 +26,7 @@ class AuthUser(db.Model):
     
     @classmethod
     def create_new_user(cls, username, email, password, isAdmin):
-      user = cls(username, email, password, isAdmin)
+      user = cls(username=username, email=email, password=password, isAdmin=isAdmin)
       return user
     
     def set_password(self, password):
@@ -34,6 +34,17 @@ class AuthUser(db.Model):
       
     def check_user(self, password):
       return check_password_hash(self.password, password)
+    
+    @classmethod  
+    def check_if_user_admin(cls, email):
+       ##  user = AuthUser.query.filter_by(email=email).first()##
+        if email:
+          user = cls.query.filter_by(email=email).first()
+          isAdm = user.email == email
+          return user.isAdmin
+        else:
+          return False
+      
     
 
 class BlogCategories(db.Model):

@@ -1,4 +1,4 @@
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for, session
 from db import db
 from models.__init_ import BlogPost, AuthUser, BlogCategories  # Certifique-se de que seus modelos estão definidos em um arquivo models.py
 
@@ -6,13 +6,14 @@ def init_blog_routes(app):
     @app.route("/")
     def index():
         posts = BlogPost.query.order_by(BlogPost.id.desc()).limit(4).all()
+        isAdmin = AuthUser.check_if_user_admin(session.get('email'))
          # Supondo que você tenha um usuário com ID 1
 
         # Tratamento de erro para posts vazios
         if not posts:
             flash('Nenhuma postagem encontrada.', 'info')
         
-        return render_template("blog/home.html", posts=posts)
+        return render_template("blog/home.html", posts=posts, isAdmin=isAdmin)
 
     @app.route('/post/<string:slug>', methods=["POST", "GET"])
     def see_post(slug):

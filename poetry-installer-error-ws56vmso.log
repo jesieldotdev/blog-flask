@@ -1,0 +1,190 @@
+Collecting poetry==1.8.4
+  Downloading poetry-1.8.4-py3-none-any.whl.metadata (6.9 kB)
+Collecting build<2.0.0,>=1.0.3 (from poetry==1.8.4)
+  Downloading build-1.2.2.post1-py3-none-any.whl.metadata (6.5 kB)
+Collecting cachecontrol<0.15.0,>=0.14.0 (from cachecontrol[filecache]<0.15.0,>=0.14.0->poetry==1.8.4)
+  Downloading cachecontrol-0.14.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting cleo<3.0.0,>=2.1.0 (from poetry==1.8.4)
+  Downloading cleo-2.1.0-py3-none-any.whl.metadata (12 kB)
+Collecting crashtest<0.5.0,>=0.4.1 (from poetry==1.8.4)
+  Downloading crashtest-0.4.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting dulwich<0.22.0,>=0.21.2 (from poetry==1.8.4)
+  Downloading dulwich-0.21.7.tar.gz (448 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting fastjsonschema<3.0.0,>=2.18.0 (from poetry==1.8.4)
+  Downloading fastjsonschema-2.20.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting installer<0.8.0,>=0.7.0 (from poetry==1.8.4)
+  Downloading installer-0.7.0-py3-none-any.whl.metadata (936 bytes)
+Collecting keyring<25.0.0,>=24.0.0 (from poetry==1.8.4)
+  Downloading keyring-24.3.1-py3-none-any.whl.metadata (20 kB)
+Collecting packaging>=23.1 (from poetry==1.8.4)
+  Downloading packaging-24.1-py3-none-any.whl.metadata (3.2 kB)
+Collecting pexpect<5.0.0,>=4.7.0 (from poetry==1.8.4)
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting pkginfo<2.0,>=1.10 (from poetry==1.8.4)
+  Downloading pkginfo-1.11.2-py3-none-any.whl.metadata (11 kB)
+Collecting platformdirs<5,>=3.0.0 (from poetry==1.8.4)
+  Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+Collecting poetry-core==1.9.1 (from poetry==1.8.4)
+  Downloading poetry_core-1.9.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting poetry-plugin-export<2.0.0,>=1.6.0 (from poetry==1.8.4)
+  Downloading poetry_plugin_export-1.8.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting pyproject-hooks<2.0.0,>=1.0.0 (from poetry==1.8.4)
+  Downloading pyproject_hooks-1.2.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting requests<3.0,>=2.26 (from poetry==1.8.4)
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting requests-toolbelt<2.0.0,>=1.0.0 (from poetry==1.8.4)
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
+Collecting shellingham<2.0,>=1.5 (from poetry==1.8.4)
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting tomlkit<1.0.0,>=0.11.4 (from poetry==1.8.4)
+  Downloading tomlkit-0.13.2-py3-none-any.whl.metadata (2.7 kB)
+Collecting trove-classifiers>=2022.5.19 (from poetry==1.8.4)
+  Downloading trove_classifiers-2024.10.21.16-py3-none-any.whl.metadata (2.2 kB)
+Collecting virtualenv<21.0.0,>=20.26.6 (from poetry==1.8.4)
+  Downloading virtualenv-20.27.1-py3-none-any.whl.metadata (4.5 kB)
+Collecting msgpack<2.0.0,>=0.5.2 (from cachecontrol<0.15.0,>=0.14.0->cachecontrol[filecache]<0.15.0,>=0.14.0->poetry==1.8.4)
+  Downloading msgpack-1.1.0.tar.gz (167 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting filelock>=3.8.0 (from cachecontrol[filecache]<0.15.0,>=0.14.0->poetry==1.8.4)
+  Downloading filelock-3.16.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting rapidfuzz<4.0.0,>=3.0.0 (from cleo<3.0.0,>=2.1.0->poetry==1.8.4)
+  Downloading rapidfuzz-3.10.1.tar.gz (58.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 MB 33.4 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting urllib3>=1.25 (from dulwich<0.22.0,>=0.21.2->poetry==1.8.4)
+  Downloading urllib3-2.2.3-py3-none-any.whl.metadata (6.5 kB)
+Collecting jaraco.classes (from keyring<25.0.0,>=24.0.0->poetry==1.8.4)
+  Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting SecretStorage>=3.2 (from keyring<25.0.0,>=24.0.0->poetry==1.8.4)
+  Downloading SecretStorage-3.3.3-py3-none-any.whl.metadata (4.0 kB)
+Collecting jeepney>=0.4.2 (from keyring<25.0.0,>=24.0.0->poetry==1.8.4)
+  Downloading jeepney-0.8.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting ptyprocess>=0.5 (from pexpect<5.0.0,>=4.7.0->poetry==1.8.4)
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3.0,>=2.26->poetry==1.8.4)
+  Downloading charset_normalizer-3.4.0-py3-none-any.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests<3.0,>=2.26->poetry==1.8.4)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting certifi>=2017.4.17 (from requests<3.0,>=2.26->poetry==1.8.4)
+  Downloading certifi-2024.8.30-py3-none-any.whl.metadata (2.2 kB)
+Collecting distlib<1,>=0.3.7 (from virtualenv<21.0.0,>=20.26.6->poetry==1.8.4)
+  Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring<25.0.0,>=24.0.0->poetry==1.8.4)
+  Downloading cryptography-43.0.3.tar.gz (686 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 687.0/687.0 kB 6.4 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × pip subprocess to install build dependencies did not run successfully.
+  │ exit code: 1
+  ╰─> [73 lines of output]
+      Collecting maturin<2,>=1
+        Downloading maturin-1.7.4.tar.gz (191 kB)
+        Installing build dependencies: started
+        Installing build dependencies: finished with status 'done'
+        Getting requirements to build wheel: started
+        Getting requirements to build wheel: finished with status 'done'
+        Preparing metadata (pyproject.toml): started
+        Preparing metadata (pyproject.toml): finished with status 'done'
+      Collecting cffi>=1.12
+        Using cached cffi-1.17.1-cp312-cp312-linux_aarch64.whl
+      Collecting setuptools!=74.0.0,!=74.1.0,!=74.1.1,!=74.1.2,!=74.1.3,!=75.0.0,!=75.1.0,!=75.2.0
+        Using cached setuptools-75.3.0-py3-none-any.whl.metadata (6.9 kB)
+      Collecting pycparser (from cffi>=1.12)
+        Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+      Using cached setuptools-75.3.0-py3-none-any.whl (1.3 MB)
+      Using cached pycparser-2.22-py3-none-any.whl (117 kB)
+      Building wheels for collected packages: maturin
+        Building wheel for maturin (pyproject.toml): started
+        Building wheel for maturin (pyproject.toml): finished with status 'error'
+        error: subprocess-exited-with-error
+      
+        × Building wheel for maturin (pyproject.toml) did not run successfully.
+        │ exit code: 1
+        ╰─> [43 lines of output]
+            /data/data/com.termux/files/home/.local/share/pypoetry/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py:251: _IncompatibleBdistWheel: wheel.bdist_wheel is deprecated, please import it from setuptools
+            !!
+      
+                    ********************************************************************************
+                    Ensure that any custom bdist_wheel implementation is a subclass of
+                    setuptools.command.bdist_wheel.bdist_wheel.
+      
+                    By 2025-Oct-15, you need to update your project and remove deprecated calls
+                    or your builds will no longer be supported.
+      
+                    See https://github.com/pypa/wheel/pull/631 for details.
+                    ********************************************************************************
+      
+            !!
+              return _build_backend().build_wheel(wheel_directory, config_settings,
+            running bdist_wheel
+            running build
+            running build_py
+            creating build/lib.linux-aarch64-cpython-312/maturin
+            copying maturin/__init__.py -> build/lib.linux-aarch64-cpython-312/maturin
+            copying maturin/__main__.py -> build/lib.linux-aarch64-cpython-312/maturin
+            running egg_info
+            writing maturin.egg-info/PKG-INFO
+            writing dependency_links to maturin.egg-info/dependency_links.txt
+            writing requirements to maturin.egg-info/requires.txt
+            writing top-level names to maturin.egg-info/top_level.txt
+            reading manifest file 'maturin.egg-info/SOURCES.txt'
+            reading manifest template 'MANIFEST.in'
+            warning: no files found matching '*.json' under directory 'src/python_interpreter'
+            writing manifest file 'maturin.egg-info/SOURCES.txt'
+            running build_ext
+            running build_rust
+            error: can't find Rust compiler
+      
+            If you are using an outdated pip version, it is possible a prebuilt wheel is available for this package but pip is not able to install from it. Installing from the wheel would avoid the need for a Rust compiler.
+      
+            To update pip, run:
+      
+                pip install --upgrade pip
+      
+            and then retry package installation.
+      
+            If you did intend to build this package from source, try installing a Rust compiler from your system package manager and ensure it is on the PATH during installation. Alternatively, rustup (available at https://rustup.rs) is the recommended way to download and update the Rust compiler toolchain.
+            [end of output]
+      
+        note: This error originates from a subprocess, and is likely not a problem with pip.
+        ERROR: Failed building wheel for maturin
+      Failed to build maturin
+      ERROR: ERROR: Failed to build installable wheels for some pyproject.toml based projects (maturin)
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× pip subprocess to install build dependencies did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+Traceback:
+
+  File "<stdin>", line 923, in main
+  File "<stdin>", line 560, in run
+  File "<stdin>", line 582, in install
+  File "<stdin>", line 685, in install_poetry
+  File "<stdin>", line 375, in pip
+  File "<stdin>", line 372, in python
+  File "<stdin>", line 365, in run

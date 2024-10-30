@@ -3,6 +3,11 @@ from flask_authz import CasbinEnforcer
 from db import db, init_db  # Certifique-se de importar db e init_db
 from models.__init_ import AuthUser
 from routes import init_routes
+import sys
+import os
+
+# Adiciona o diretório raiz do projeto ao sys.path
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 app = Flask(__name__)
 
