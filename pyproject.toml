@@ -1,0 +1,25 @@
+[project]
+name = "blog-flask"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "jesieldotdev", email = "jesiel364@gmail.com"},
+]
+dependencies = [
+    "flask>=3.0.3",
+    "flask-sqlalchemy>=3.1.1",
+    "flask-migrate>=4.0.7",
+    "casbin>=1.36.3",
+    "flask-authz>=2.6.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
