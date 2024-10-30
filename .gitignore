@@ -1,2 +1,33 @@
-/flask_session
-__pycache__
+# Ignore the environment folder (ajuste se necessário)
+venv/
+.env/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Flask session directory
+flask_session/
+
+# Logs and database files
+*.log
+#*.sqlite3
+#*.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environment folder names (caso use outros nomes de venv)
+env/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+
+# Ignore specific IDE and editor configs (opcional)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
