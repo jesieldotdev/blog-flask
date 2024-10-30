@@ -24,12 +24,10 @@ class AuthUser(db.Model):
     password = db.Column(db.String, nullable=False)
     isAdmin = db.Column(db.Boolean, nullable=False)
     
-    def create_new_user(self, username, email, password, isAdmin):
-      self.username = username
-      self.email = email
-      self.password = password
-      self.isAdmin = isAdmin
-      return self
+    @classmethod
+    def create_new_user(cls, username, email, password, isAdmin):
+      user = cls(username, email, password, isAdmin)
+      return user
     
     def set_password(self, password):
       self.password = generate_password_hash(password)

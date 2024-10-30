@@ -6,52 +6,58 @@
 
 
 
-<img id="post-img" style="margin: auto;" class="card-img-top rounded-lg border-0  mt-6 mb-4  w-100" src="{{post.image}}">
+<img id="post-img" style="margin: auto;" class="card-img-top rounded-lg border-0  mt-6 mb-4  w-100"
+  src="{{post.image}}">
 <div style="min-width: 300px; max-width: 800px;" class="card-body container-fluid">
 
-<h2  class="title text-center mb-4 fw-extra-bold">{{post.title}}</h2>
- 
+  <h2 class="title text-center mb-4 fw-extra-bold">{{post.title}}</h2>
 
+
+
+
+
+  <div id="info" style="margin: auto;" class="">
+    <hr>
+    <div class="d-flex justify-content-between">
+
+      <p class="fw-bold " id="">{{ post.author.username }}</p>
+
+      {% if post.author.isAdmin %}
+      <a href="{{url_for('edit_post', post_id=post.id)}}">Editar post</a>
+      {% endif %}
+    </div>
+
+    <div class=" ">
+      <span>
+        <i class="far fa-clock"></i>
+      </span>
+      <small class="mt-0">
+
+        {{ post.created_at.strftime("%d/%m/%Y") }} 
+        {{ post.created_at.strftime("%Hh%M") }}
+      </small><br>
   
 
+      <small class="mt-0">
+        <a href="#"><span class="badge rounded-pill bg-dark p-2 mt-1 mb-1 ">{{ post.category }}</span></a>
+      </small>
+    </div>
+    <hr>
+  </div>
 
-<div id="info" style="margin: auto;" class="">
-<hr>
-<div class="d-flex justify-content-between">
-  
-<p class="fw-bold " id="">{{ post.author.username }}</p>
+  <div>
 
-{% if post.author.isAdmin %}
-<a href="{{url_for('edit_post', post_id=post.id)}}">Editar post</a>
-{% endif %}
-</div>
+    <p class="" id="post-body">{% autoescape off %}
+      {{ post.body }}
+      {% endautoescape %}</p>
 
-<div class=" ">
-<small class="mt-0">
+    <strong>Fonte: </strong><a href="#"><span class="badge rounded-pill bg-secondary p-2 mt-3  ">{{ post.fontes
+        }}</span></a>
 
-    {{ post.created_at.strftime("%d/%m/%Y") }} às
-    {{ post.created_at.strftime("%H:%M") }}
-</small><br>
-
-<small class="mt-0">
-	<a href="#"><span class="badge rounded-pill bg-dark p-2 mt-1 mb-1 ">{{ post.category }}</span></a>
-</small>
-</div>
-<hr>
-</div>
-
-<div>
-
-<p class="" id="post-body">{% autoescape off  %}
-    {{ post.body }}
-{% endautoescape %}</p>
-
-    <strong>Fonte: </strong><a href="#"><span class="badge rounded-pill bg-secondary p-2 mt-3  ">{{ post.fontes }}</span></a>
-
-</div>
+  </div>
 
 
-<!-- <ul class="nav nav-pills mb-3 d-flex justify-content-around" id="pills-tab" role="tablist">
+  <!-- <ul class="nav nav-pills mb-3 d-flex justify-content-around" id="pills-tab" role="tablist">
   {% for indice in post_list %}
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{indice.title}}</a>
@@ -59,11 +65,11 @@
   {% endfor %}
 </ul> -->
 
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
-</div>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
+  </div>
 
 
-{% endblock %}
+  {% endblock %}
