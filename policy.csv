@@ -1,0 +1,5 @@
+# sub, obj, act
+admin, /admin, GET
+editor, /post, GET
+editor, /post, POST
+user, /post, GET

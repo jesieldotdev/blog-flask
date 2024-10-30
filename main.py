@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_authz import CasbinEnforcer
 from db import db, init_db  # Certifique-se de importar db e init_db
 from models.__init_ import AuthUser
 from routes import init_routes
@@ -11,7 +12,9 @@ app.config['SESSION_TYPE'] = "filesystem"
 # Modo de leitura e escrita
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db?mode=rw'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+app.config['CASBIN_MODEL'] = 'model.conf'
+app.config['CASBIN_POLICY'] = 'policy.csv'
+enforcer = CasbinEnforcer(app)
 # Inicializar banco de dados
 init_db(app)
 with app.app_context():

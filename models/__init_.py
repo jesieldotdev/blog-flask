@@ -1,6 +1,6 @@
 from db import db
 from sqlalchemy.orm import relationship
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class BlogPost(db.Model):
     __tablename__ = 'blog_posts'
@@ -23,7 +23,20 @@ class AuthUser(db.Model):
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
     isAdmin = db.Column(db.Boolean, nullable=False)
-
+    
+    def create_new_user(self, username, email, password, isAdmin):
+      self.username = username
+      self.email = email
+      self.password = password
+      self.isAdmin = isAdmin
+      return self
+    
+    def set_password(self, password):
+      self.password = generate_password_hash(password)
+      
+    def check_user(self, password):
+      return check_password_hash(self.password, password)
+    
 
 class BlogCategories(db.Model):
     __tablename__ = 'blog_categories'

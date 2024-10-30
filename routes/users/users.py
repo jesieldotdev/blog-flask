@@ -21,8 +21,7 @@ def init_users_routes(app):
 
             # Supondo que você tenha um campo para o ID do autor
 
-            new_user = AuthUser(username=username, email=email,
-                                password=password, isAdmin=isAdmin)
+            new_user = AuthUser.create_new_user(username, email, password, isAdmin)
             db.session.add(new_user)
             db.session.commit()
             flash('Usuário criado com sucesso!', 'success')
