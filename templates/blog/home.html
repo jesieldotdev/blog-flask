@@ -15,7 +15,7 @@
       <a href="{{ url_for('see_post', slug=post.slug) }}">
         <img src="{{ post.image }}" class="w-full h-48 object-cover" alt="{{ post.title }}">
         <div class="p-4">
-          <h5 class="text-lg font-semibold text-gray-800">{{ post.title }}</h5>
+          <h2 class="title  text-lg font-extrabold">{{ post.title }}</h2>
         </a>
         <small class="text-gray-500">{{ post.created_at.strftime("%d/%m/%Y às %H:%M")}}</small>
       </div>
