@@ -1,19 +1,19 @@
-.login-canvas{
-  background-color: #6F00A2;
+.login-canvas {
+  background-color: #5E00A2; /* Um tom mais escuro para o fundo */
   padding-top: 70px;
   padding-bottom: 100%;
-
- 
 }
 
-#login-container{
+#login-container {
   max-width: 400px;
   padding-bottom: 60px;
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* Fundo branco para o container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-#login-logo{
+#login-logo {
   height: 200px;
   position: absolute;
   margin: auto;
@@ -23,48 +23,48 @@
   right: 0;
 }
 
-#login-header{
+#login-header {
   justify-content: center;
   display: flex;
-  /* background-color: green; */
-
 }
 
-
-#login-header h2{
-  color: #A726E3;
+#login-header h2 {
+  color: #5E00A2; /* Cor do cabeçalho mais escura */
 }
 
-.form{
+.form {
   padding-top: 80px;
-
 }
 
-.form, #login-header{
+.form, #login-header {
   max-width: 300px;
   margin: auto;
-  /* background-color: red; */
 }
 
-.button-control{
+.button-control {
   display: flex;
 }
 
-#form-button{
-  background-color: #A726E3;
+#form-button {
+  background-color: #A726E3; /* Mantive essa cor, pois é uma boa escolha */
   border: none;
   align-content: center;
   width: 100%;
+  color: #ffffff; /* Texto branco para contraste */
+  padding: 10px; /* Adiciona um pouco de espaço interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+#form-button:hover {
+  background-color: #9522B3; /* Cor ao passar o mouse */
 }
 
 input[type="checkbox"]:checked {
-  /* display: none; */
-  background-color: #A726E3;
-  /* border: none; */
-
-
+  background-color: #A726E3; /* Mantive a cor de fundo do checkbox */
 }
 
-.form-check-label{
+.form-check-label {
   font-size: 16px;
+  color: #333; /* Texto mais escuro para melhor legibilidade */
 }
