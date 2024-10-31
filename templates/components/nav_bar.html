@@ -1,51 +1,72 @@
 <style>
     /* Reduzindo o padding da navbar */
-    .navbar {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .navbar-nav .nav-link {
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-    }
-
     #nav-logo {
         height: 40px; /* Ajusta o tamanho do logo, se necessário */
+    }
+    .mobile-navbar {
+        transition: max-height 0.5s ease, opacity 0.5s ease; /* Transição para a navbar mobile */
+        overflow: hidden; /* Para ocultar o conteúdo quando não estiver visível */
+        max-height: 0; /* Começa fechado */
+        opacity: 0; /* Começa invisível */
+    }
+    .mobile-navbar.show {
+        max-height: 200px; /* Altura máxima para quando o menu está visível (ajuste conforme necessário) */
+        opacity: 1; /* Torna visível */
     }
 </style>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-body shadow-lg fixed-top">
-    <div class="container-fluid">
-        <a id="logo" class="navbar-brand" href="/">
-            <img id="nav-logo" src="{{ url_for('static', filename='img/logo-variation.png') }}" alt="Logo" class="d-inline-block align-text-center p-0">
+<nav class="bg-white shadow-lg fixed top-0 left-0 right-0 z-10">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+        <a id="logo" class="flex items-center" href="/">
+            <img id="nav-logo" src="{{ url_for('static', filename='img/logo-variation.png') }}" alt="Logo" class="h-10"> <!-- Ajuste a altura conforme necessário -->
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="lg:hidden p-2 border-0" type="button" onclick="toggleNavbar()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
-            <ul id="nav-list" class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                
-                {% if not session.email %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-                {% endif %}
-                {% if isAdmin  %}
-                 <li class="nav-item">
-                    <a class="nav-link" href="/admin">Admin</a>
-                </li>
-                {% endif %}
-            </ul>
+        <div class="hidden lg:flex flex-grow justify-end space-x-4" id="navbarSupportedContent">
+            <a class="text-gray-800 hover:text-blue-600" href="/">Home</a>
+            
+            {% if not session.email %}
+            <a class="text-gray-800 hover:text-blue-600" href="/login">Login</a>
+            {% else %}
+            <a class="text-gray-800 hover:text-blue-600" href="/logout">Logout</a>
+            {% endif %}
+            {% if isAdmin %}
+            <a class="text-gray-800 hover:text-blue-600" href="/admin">Admin</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Navbar mobile -->
+    <div class="mobile-navbar" id="mobileNavbar">
+        <div class="flex flex-col space-y-2 px-4 py-2">
+            <a class="text-gray-800 hover:text-blue-600" href="/">Home</a>
+            {% if not session.email %}
+            <a class="text-gray-800 hover:text-blue-600" href="/login">Login</a>
+            {% else %}
+            <a class="text-gray-800 hover:text-blue-600" href="/logout">Logout</a>
+            {% endif %}
+            {% if isAdmin %}
+            <a class="text-gray-800 hover:text-blue-600" href="/admin">Admin</a>
+            {% endif %}
         </div>
     </div>
 </nav>
+
+<script>
+    function toggleNavbar() {
+        const mobileNavbar = document.getElementById('mobileNavbar');
+        mobileNavbar.classList.toggle('show'); // Adiciona ou remove a classe 'show'
+
+        // Transição de opacidade e altura
+        if (mobileNavbar.classList.contains('show')) {
+            mobileNavbar.style.maxHeight = mobileNavbar.scrollHeight + "px"; // Ajusta a altura máxima para a altura do conteúdo
+        } else {
+            mobileNavbar.style.maxHeight = "0"; // Fecha o menu
+        }
+    }
+</script>

@@ -1,19 +1,22 @@
-<header class="pb-2 " id="painel-header">
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+<header class="pb-2" id="painel-header">
+    <div class="accordion" id="accordionFlushExample">
         <div class="accordion-item shadow-sm rounded">
             <h2 class="accordion-header" id="flush-headingOne">
-                <button id="accordion-bt" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <button id="accordion-bt" class="accordion-button collapsed flex items-center justify-between w-full text-lg font-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     <h3 id="accordion-titulo" class="m-0">Painel de Administração</h3>
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8" />
+                    </svg>
                 </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    <div class="menu d-flex justify-content-between align-items-center">
-                        <span>Bem-vindo(a), <strong>{{ session.username }}</strong></span>
-                        <div class="links">
-                            <a href="{{ url_for('index') }}" class="btn btn-link">VER SITE</a>
-                            <a href="#" class="btn btn-link">ALTERAR SENHA</a>
-                            <a href="/logout" class="btn btn-link">ENCERRAR SESSÃO</a>
+                    <div class="menu flex justify-between items-center py-2">
+                        <span class="text-gray-700">Bem-vindo(a), <strong>{{ session.username }}</strong></span>
+                        <div class="links space-x-4">
+                            <a href="{{ url_for('index') }}" class="text-blue-600 hover:underline">VER SITE</a>
+                            <a href="#" class="text-blue-600 hover:underline">ALTERAR SENHA</a>
+                            <a href="/logout" class="text-blue-600 hover:underline">ENCERRAR SESSÃO</a>
                         </div>
                     </div>
                 </div>

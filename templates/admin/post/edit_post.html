@@ -3,44 +3,44 @@
 
 {% block content %}
 
-{% include 'components/header.html' %}
 
-<div class="label">
-    <h6>MODIFICAR POSTAGEM</h6>
+
+<div class="label mb-5 mt-8">
+    <h6 class="text-xl font-semibold">MODIFICAR POSTAGEM</h6>
 </div>
 
-<form method="POST" action="{{ url_for('update_post', post_id=post.id) }}">
+<form method="POST" action="{{ url_for('update_post', post_id=post.id) }}" class="space-y-4">
     <div id="criar-post">
-        <div class="mb-3 mt-3">
-            <input type="text" class="form-control" id="title" name="title" placeholder="Título" value="{{ post.title }}">
+        <div class="mb-3">
+            <input type="text" class="form-input block w-full border border-gray-300 rounded-md p-2" id="title" name="title" placeholder="Título" value="{{ post.title }}">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" value="{{ post.slug }}">
+            <input type="text" class="form-input block w-full border border-gray-300 rounded-md p-2" id="slug" name="slug" placeholder="Slug" value="{{ post.slug }}">
         </div>
         <div class="mb-3">
-            <textarea class="form-control" id="body" name="body" rows="8">{{ post.body }}</textarea>
+            <textarea class="form-textarea block w-full border border-gray-300 rounded-md p-2" id="body" name="body" rows="8">{{ post.body }}</textarea>
         </div>
-<div class="mb-3">
-    <label for="author_id" class="form-label">Autor</label>
-    <select class="form-select form-control" id="author_id" name="author_id">
-        {% for user in users %}
-        <option value="{{ user.id }}" {% if post.author.id == user.id %}selected{% endif %}>{{ user.username }}</option>
-        {% endfor %}
-    </select>
-</div>
         <div class="mb-3">
-            <label for="image" class="form-label">Imagem</label>
-            <input type="url" class="form-control" id="image" name="image" placeholder='https://github.com/image.png' value="{{ post.image }}">
+            <label for="author_id" class="form-label block mb-2">Autor</label>
+            <select class="form-select block w-full border border-gray-300 rounded-md p-2" id="author_id" name="author_id">
+                {% for user in users %}
+                <option value="{{ user.id }}" {% if post.author.id == user.id %}selected{% endif %}>{{ user.username }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label block mb-2">Imagem</label>
+            <input type="url" class="form-input block w-full border border-gray-300 rounded-md p-2" id="image" name="image" placeholder='https://github.com/image.png' value="{{ post.image }}">
         </div>
     </div>
 
-    <div class="action-canvas">
-        <div class="div1">
-            <button type="submit" class="btn btn-success p-2">Salvar Alterações</button>
-            <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger p-2">Descartar</a>
+    <div class="flex justify-between mt-4">
+        <div>
+            <button type="submit" class="btn btn-success p-2 bg-green-500 text-white rounded-md">Salvar Alterações</button>
+            <a href="{{ url_for('discard_changes', post_id=post.id) }}" class="btn btn-danger p-2 bg-red-500 text-white rounded-md">Descartar</a>
         </div>
-        <div class="div2">
-            <button type="submit" formaction="{{ url_for('update_and_add_another', post_id=post.id) }}" class="btn btn-primary ml-2 p-2">Salvar e Modificar Outro</button>
+        <div>
+            <button type="submit" formaction="{{ url_for('update_and_add_another', post_id=post.id) }}" class="btn btn-primary p-2 bg-blue-500 text-white rounded-md">Salvar e Modificar Outro</button>
         </div>
     </div>
 </form>

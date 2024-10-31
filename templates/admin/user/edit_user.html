@@ -3,37 +3,35 @@
 
 {% block content %}
 
-{% include 'components/header.html' %}
 
-<div class="label">
-    <h6>MODIFICAR USUÁRIO</h6>
+<div class="label mb-4">
+    <h6 class="font-bold text-lg">MODIFICAR USUÁRIO</h6>
 </div>
 
 <form method="POST" action="{{ url_for('update_user', user_id=user.id) }}">
-    <div id="editar-usuario">
-        <div class="mb-3 mt-3">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Nome de Usuário" value="{{ user.username }}">
+    <div id="editar-usuario" class="space-y-4">
+        <div>
+            <input type="text" class="form-control border rounded-md p-2 w-full" id="username" name="username" placeholder="Nome de Usuário" value="{{ user.username }}">
         </div>
-        <div class="mb-3">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ user.email }}">
+        <div>
+            <input type="email" class="form-control border rounded-md p-2 w-full" id="email" name="email" placeholder="Email" value="{{ user.email }}">
         </div>
-        <div class="mb-3">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Senha (deixe em branco para não alterar)">
+        <div>
+            <input type="password" class="form-control border rounded-md p-2 w-full" id="password" name="password" placeholder="Senha (deixe em branco para não alterar)">
         </div>
-        <div class="mb-3">
-            <label for="isAdmin" class="form-label">Admin</label>
-            <select class="form-select" id="isAdmin" name="isAdmin">
+        <div>
+            <label for="isAdmin" class="form-label block mb-2">Admin</label>
+            <select class="form-select border rounded-md p-2 w-full" id="isAdmin" name="isAdmin">
                 <option value="true" {% if user.isAdmin %}selected{% endif %}>Sim</option>
                 <option value="false" {% if not user.isAdmin %}selected{% endif %}>Não</option>
             </select>
         </div>
     </div>
 
-    <div class="action-canvas">
+    <div class="action-canvas mt-4">
         <div class="div1">
-            <button type="submit" class="btn btn-success p-2">Salvar Alterações</button>
+            <button type="submit" class="btn bg-green-500 text-white rounded-md px-4 py-2">Salvar Alterações</button>
         </div>
-
     </div>
 </form>
 

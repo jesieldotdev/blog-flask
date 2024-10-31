@@ -1,34 +1,49 @@
 <style>
+    /* Escondendo a barra de rolagem em navegadores */
     .scrolling-categories {
-        overflow-x: auto;
-        
-        white-space: nowrap;
-        -ms-overflow-style: none;  /* Para Internet Explorer e Edge */
-        scrollbar-width: none;  /* Para Firefox */
+        overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede quebra de linha */
     }
 
+    /* Esconder a barra de rolagem */
     .scrolling-categories::-webkit-scrollbar {
-        display: none;  /* Para Chrome, Safari e Opera */
+        display: none; /* Para Chrome, Safari e Opera */
     }
 
-    .category-item {
-        display: inline-block;
-        margin-right: 10px;
-        cursor: pointer;
-        border-radius: 50px; /* Borda arredondada */
+    .scrolling-categories {
+        -ms-overflow-style: none; /* Para Internet Explorer e Edge */
+        scrollbar-width: none; /* Para Firefox */
     }
 </style>
 
-<div class="container mt-4">
+<div class="container mx-auto mt-6">
     <div class="scrolling-categories">
-        <div class="category-item btn btn-primary">Tecnologia</div>
-        <div class="category-item btn btn-primary">Desenvolvimento</div>
-        <div class="category-item btn btn-primary">Educação</div>
-        <div class="category-item btn btn-primary">Saúde</div>
-        <div class="category-item btn btn-primary">Música</div>
-        <div class="category-item btn btn-primary">Arte</div>
-        <div class="category-item btn btn-primary">Negócios</div>
-        <div class="category-item btn btn-primary">Ciência</div>
-        <div class="category-item btn btn-primary">Literatura</div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Tecnologia</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Desenvolvimento</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Educação</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Saúde</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Música</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Arte</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Negócios</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Ciência</div>
+        </div>
+        <div class="inline-block mr-2">
+            <div class="category-item bg-blue-500 text-white rounded-full px-4 py-2 cursor-pointer transition duration-300 hover:bg-blue-600">Literatura</div>
+        </div>
     </div>
 </div>

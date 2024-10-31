@@ -4,74 +4,64 @@
 {% block content %}
 
 <header class="pt-5" id="painel-header">
-	<h4 class="text-center">Painel de Administração</h4>
-	<div class="menu"><span>Bem vindo(a), {{session.username}} <a href="{{url_for('index')}}">VER SITE</a> / <a
-				href="">ALTERAR SENHA</a> / <a href="/logout">ENCERRAR SEÇÃO</a> </span></div>
+    <h4 class="text-center text-2xl font-bold">Painel de Administração</h4>
+    <div class="text-center mt-2">
+        <span>Bem-vindo(a), {{ session.username }} 
+            <a href="{{ url_for('index') }}" class="text-blue-500 hover:underline">VER SITE</a> / 
+            <a href="#" class="text-blue-500 hover:underline">ALTERAR SENHA</a> / 
+            <a href="/logout" class="text-blue-500 hover:underline">ENCERRAR SEÇÃO</a>
+        </span>
+    </div>
 </header>
 
-<main id="painel-main">
+<main id="painel-main" class="max-w-4xl mx-auto mt-8 px-4">
+    <h5 class="text-xl font-semibold mb-4">Administração do Blog</h5>
 
-	<h5>Administração do Blog</h5>
-	<div>
-		<div class="label">
-			<h6>AUTORIZAÇÃO E AUTENTICAÇÃO</h6>
-		</div>
-		<div class="dt">
-			<div class="dt-row">
-				<a class="type" href="">Grupos</a>
-				<div class="action">
-					<a href="">+Adicionar</a>
-					<a href="">Modificar</a>
-				</div>
+    <div class="mb-6">
+        <div class="label">
+            <h6 class="text-lg font-semibold">AUTORIZAÇÃO E AUTENTICAÇÃO</h6>
+        </div>
+        <div class="dt bg-gray-100 rounded-lg p-4">
+            <div class="dt-row flex justify-between items-center mb-4">
+                <a class="type text-blue-600 hover:underline" href="#">Grupos</a>
+                <div class="action">
+                    <a href="#" class="text-blue-500 hover:underline">+Adicionar</a>
+                    <a href="#" class="text-blue-500 hover:underline">Modificar</a>
+                </div>
+            </div>
+            <hr>
+            <div class="dt-row flex justify-between items-center mb-4">
+                <a class="type text-blue-600 hover:underline" href="{{ url_for('users_list') }}">Usuários</a>
+                <div class="action">
+                    <a href="{{ url_for('create_user') }}" class="text-blue-500 hover:underline">+Adicionar</a>
+                    <a href="#" class="text-blue-500 hover:underline">Modificar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			</div>
-			<hr>
-			<div class="dt-row">
-				<a class="type" href="{{url_for('users_list')}}">Usuários</a>
-				<div class="action">
-					<a href="{{url_for('create_user')}}">+Adicionar</a>
-					<a href="">Modificar</a>
-				</div>
-			</div>
-
-
-		</div>
-
-
-	</div>
-	<div>
-		<div class="label">
-			<h6>Blog</h6>
-		</div>
-		<div class="dt">
-			<div class="dt-row">
-				<a class="type" href="">Categorias</a>
-				<div class="action">
-					<a href="">+Adicionar</a>
-					<a href="">Modificar</a>
-				</div>
-
-			</div>
-			<hr>
-			<div class="dt-row">
-				<a class="type" href="{{ url_for('post_list') }}">Posts</a>
-				<div class="action">
-					<a href="{{ url_for('create_post') }}">+Adicionar</a>
-					<a href="">Modificar</a>
-				</div>
-			</div>
-
-
-		</div>
-
-
-	</div>
+    <div>
+        <div class="label">
+            <h6 class="text-lg font-semibold">Blog</h6>
+        </div>
+        <div class="dt bg-gray-100 rounded-lg p-4">
+            <div class="dt-row flex justify-between items-center mb-4">
+                <a class="type text-blue-600 hover:underline" href="#">Categorias</a>
+                <div class="action">
+                    <a href="#" class="text-blue-500 hover:underline">+Adicionar</a>
+                    <a href="#" class="text-blue-500 hover:underline">Modificar</a>
+                </div>
+            </div>
+            <hr>
+            <div class="dt-row flex justify-between items-center mb-4">
+                <a class="type text-blue-600 hover:underline" href="{{ url_for('post_list') }}">Posts</a>
+                <div class="action">
+                    <a href="{{ url_for('create_post') }}" class="text-blue-500 hover:underline">+Adicionar</a>
+                    <a href="#" class="text-blue-500 hover:underline">Modificar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
-
-
-</div>
-
-
-
 
 {% endblock %}

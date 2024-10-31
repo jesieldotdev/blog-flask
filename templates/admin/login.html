@@ -1,79 +1,52 @@
-
 {% extends "base.html" %}
 {% block title %}Página de Login{% endblock %}
 
 {% block content %}
-<div class="login-canvas">
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
 
-  <div id="login-container" class="container bg-light text-dark ">
+    <div id="login-container" class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <header id="login-header" class="text-center mb-6">
+            <img id="login-logo" src="{{ url_for('static', filename='img/logo-1.png') }}" class="w-24 mx-auto">
+        </header>
 
-  <header id="login-header">
-      <img id='login-logo' src="{{ url_for('static', filename='img/logo-1.png') }}">
-  </header>
+        <main class="form">
+            <form method="post" action="{{ url_for('login') }}">
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+                    <input type="email" class="form-control w-full p-2 border rounded" id="inputEmail3" name="email" required>
+                </div>
 
+                <div class="mb-4">
+                    <label for="inputPassword3" class="block text-sm font-semibold mb-1">Senha</label>
+                    <input type="password" class="form-control w-full p-2 border rounded" id="inputPassword3" name="password" required>
+                </div>
 
+                <div class="flex items-center mb-4">
+                    <input class="form-check-input mr-2" type="checkbox" id="check" name="remember" value="remember">
+                    <label class="form-check-label" for="check">Lembrar</label>
+                </div>
 
-  <main class="form">
-    <form method="post" action="{{url_for('login')}}">
-  
-      <div class="row mb-3 ">
-          <div>
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail3" name="email">
-          </div>
-      </div>
-  
-      <div class="row mb-3">
-        <div>
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Senha</label>
-          <input type="password" class="form-control" id="inputPassword3" name="password">
-        </div>
-      </div>
+                <div class="text-center">
+                    <button id="form-button" value="Submit" type="submit" class="btn btn-primary w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700">Entrar</button>
+                </div>
+            </form>
+        </main>
 
-      <div class="row mb-3">
-        <div class="">
-            <input class="form-check-input" type="checkbox" id="check" name="remember" value='remember'>
-            <label class="form-check-label" for="check">Lembrar</label>
-        </div>
-      </div>
-
- 
-      <div class="button-control">
-        <button id="form-button" value="Submit" type="submit" class="btn btn-primary">Entrar</button>
-      </div>
-      
-    </form>
-  </main>
-
-
- <hr style="max-width: 300px;"  class="mx-auto mt-5 mb-0 "/>
-<footer  class="mx-auto w-50 mt-2">
-
-  <div class="d-flex">
-    
-    <a  href="https://github.com/jesiel364" class="parent">
-      <i>
-        <img   src="{{url_for('static', filename='svgs/github-fill.svg') }}"/></img>
-      </i>
-    </a> 
-
-    <a  href="https://github.com/jesiel364" class="parent">
-      <i>
-        <img   src="{{url_for('static', filename='svgs/instagram-fill.svg') }}"/></img>
-      </i>
-    </a> 
-
-    <a  href="https://github.com/jesiel364" class="parent">
-      <i>
-        <img   src="{{url_for('static', filename='svgs/pinterest-fill.svg') }}"/></img>
-      </i>
-    </a> 
-
-  </div>
-
-    
-</footer>
-<p class="text-center mt-2">©2022</p>
-</div>
+        <hr class="my-5" />
+        <footer class="text-center">
+            <div class="flex justify-center space-x-4">
+                <a href="https://github.com/jesiel364" class="parent">
+                    <img src="{{ url_for('static', filename='svgs/github-fill.svg') }}" class="w-8 h-8" />
+                </a> 
+                <a href="https://github.com/jesiel364" class="parent">
+                    <img src="{{ url_for('static', filename='svgs/instagram-fill.svg') }}" class="w-8 h-8" />
+                </a> 
+                <a href="https://github.com/jesiel364" class="parent">
+                    <img src="{{ url_for('static', filename='svgs/pinterest-fill.svg') }}" class="w-8 h-8" />
+                </a> 
+            </div>
+            <p class="text-center mt-2 text-gray-500">©2022</p>
+        </footer>
+    </div>
 </div>
 {% endblock %}
