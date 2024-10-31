@@ -1,4 +1,4 @@
-{% load static %}
+/* {% load static %}
 
 /* Font imports */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&family=Poppins:ital,wght@0,500;1,500&display=swap');
@@ -14,6 +14,8 @@
     --grey-color: grey;
     --hover-color: #ef5350;
     --border-radius: 10px;
+    
+
 }
 
 /* General Styles */
@@ -22,6 +24,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f2f2f5;
+
+
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari e Opera */
+    -ms-overflow-style: none; /* Para Internet Explorer e Edge */
+    scrollbar-width: none;
 }
 
 a {
@@ -35,40 +45,6 @@ a:hover {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--secondary-font);
-    color: var(--dark-color);
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-}
-
-p {
-    font-family: var(--primary-font);
-    margin: 0 0 1rem 0;
-    line-height: 1.6;
-}
-
-/* Header */
-#header-post {
-    width: 25rem;
-    margin: 2rem auto;
-    text-align: center;
-}
-
-#post-title {
-    color: var(--dark-color);
-    font-family: var(--secondary-font);
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-
-/* Author */
-#autor {
-    font-family: var(--secondary-font);
-    color: var(--grey-color);
-    font-weight: bold;
-}
 
 /* Blog Cards */
 .card {
@@ -129,4 +105,59 @@ footer {
 
 .btn-primary:hover {
     background-color: var(--hover-color);
+}
+
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte clean */
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+    background-color: #f7f7f7; /* Cor de fundo suave */
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+.post-container {
+    max-width: 800px; /* Largura máxima para o post */
+    margin: 20px auto; /* Centraliza o post */
+    padding: 20px; /* Espaço interno */
+    background-color: #fff; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.post-title {
+    font-size: 2.5em; /* Tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.post-intro {
+    font-size: 1.2em; /* Tamanho da fonte da introdução */
+    margin-bottom: 20px; /* Espaço abaixo da introdução */
+    color: #666; /* Cor do texto da introdução */
+}
+
+.post-heading {
+    font-size: 1.2em; /* Tamanho da fonte dos subtítulos */
+    margin-top: 30px; /* Espaço acima dos subtítulos */
+    margin-bottom: 10px; /* Espaço abaixo dos subtítulos */
+    border-bottom: 2px solid #eaeaea; /* Linha abaixo do subtítulo */
+    padding-bottom: 10px; /* Espaço interno abaixo do subtítulo */
+    font-weight: bold;
+}
+
+.post-paragraph {
+    margin-bottom: 20px; /* Espaço entre parágrafos */
+}
+
+.post-code {
+    background-color: #f5f5f5; /* Cor de fundo dos códigos */
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    overflow-x: auto; /* Permitir rolagem horizontal se necessário */
+    font-family: 'Courier New', monospace; /* Fonte monoespaçada */
+    white-space: pre; /* Preservar espaços em branco */
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do bloco de código */
 }
