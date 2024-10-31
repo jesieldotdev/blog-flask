@@ -1,37 +1,36 @@
 {% extends 'base.html' %}
 
-{% block title %}Listar Usuários{% endblock %}
+{% block title %}Lista de Usuários{% endblock %}
+
 
 
 {% block content %}
-<div class="container mx-auto px-4 mt-8">
-    <p class="font-bold text-lg mb-4">Listar de Usuários</p>
-    
+<div class="container mx-auto my-6 mt-8">
+    <h1 class="text-2xl font-semibold mb-4">Lista de Usuários</h1>
     <div class="mb-4">
-        <a href="{{ url_for('create_user') }}" class="btn bg-blue-500 text-white rounded-md px-4 py-2">Adicionar usuário</a>
+        <a href="{{ url_for('create_post') }}" class="btn btn-info bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Novo Usuário</a>
     </div>
-    
-    <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-        <thead class="bg-gray-200">
-            <tr>
-                <th class="py-2 px-4 border-b">ID</th>
-                <th class="py-2 px-4 border-b">Nome</th>
-                <th class="py-2 px-4 border-b">Email</th>
-                <th class="py-2 px-4 border-b">Senha</th>
-                <th class="py-2 px-4 border-b">Admin</th>
-                <th class="py-2 px-4 border-b">Ações</th>
+    <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+        <thead>
+            <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-6 text-left">ID</th>
+                <th class="py-3 px-6 text-left">Nome</th>
+                <th class="py-3 px-6 text-left">Email</th>
+                <th class="py-3 px-6 text-left">Senha</th>
+                <th class="py-3 px-6 text-left">Admin</th>
+                <th class="py-3 px-6 text-left">Ações</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-gray-600 text-sm font-light">
             {% for user in users %}
-            <tr class="hover:bg-gray-100">
-                <td class="py-2 px-4 border-b">{{ user.id }}</td>
-                <td class="py-2 px-4 border-b">{{ user.username }}</td>
-                <td class="py-2 px-4 border-b">{{ user.email }}</td>
-                <td class="py-2 px-4 border-b">{{ user.password }}</td>
-                <td class="py-2 px-4 border-b">{{ user.isAdmin }}</td>
-                <td class="py-2 px-4 border-b">
-                    <a href="{{ url_for('edit_user', user_id=user.id) }}" class="btn bg-yellow-400 text-white rounded-md px-2 py-1">Editar</a>
+            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6">{{ user.id }}</td>
+                <td class="py-3 px-6">{{ user.username }}</td>
+                <td class="py-3 px-6">{{ user.email }}</td>
+                <td class="py-3 px-6">{{ user.password }}</td>
+                <td class="py-3 px-6">{% if user.isAdmin %} Sim {% else %} Não {% endif %}</td>
+                <td class="py-3 px-6">
+                    <a href="{{ url_for('edit_user', user_id=user.id) }}" class="btn btn-warning bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">Editar</a>
                     <a href="{{ url_for('delete_user', user_id=user.id) }}" class="btn bg-red-500 text-white rounded-md px-2 py-1">Descartar</a>
                 </td>
             </tr>
