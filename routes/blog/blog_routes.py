@@ -1,44 +1,63 @@
+import requests
 from flask import render_template, request, flash, redirect, url_for, session
-from db import db
-from models.__init_ import BlogPost, AuthUser, BlogCategories  # Certifique-se de que seus modelos estão definidos em um arquivo models.py
-
 
 def init_blog_routes(app):
+    API_BASE_URL = "https://posts-api-next.vercel.app/api/posts"  # Substitua pela URL base da sua API
+
     @app.errorhandler(404)
     def page_not_found(e):
-      return render_template("404.html")
+        return render_template("404.html")
+
     @app.route("/")
     def index():
-        posts = BlogPost.query.order_by(BlogPost.id.desc()).limit(4).all()
-        isAdmin = AuthUser.check_if_user_admin(session.get('email'))
-         # Supondo que você tenha um usuário com ID 1
+        try:
+            response = requests.get(f"{API_BASE_URL}/")
+            response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
+            posts = response.json()["posts"]  # Assumindo que a API retorna um JSON
+            print(posts)
+        except requests.RequestException as e:
+            flash("Erro ao buscar posts da API.", "danger")
+            posts = []
 
-        # Tratamento de erro para posts vazios
+        isAdmin = session.get("is_admin", False)  # Ajuste baseado na sua lógica de autenticação
+
         if not posts:
-            flash('Nenhuma postagem encontrada.', 'info')
-        
+            flash("Nenhuma postagem encontrada.", "info")
+
         return render_template("blog/home.html", posts=posts, isAdmin=isAdmin)
 
-    @app.route('/post/<string:slug>', methods=["POST", "GET"])
+    @app.route("/post/<string:slug>", methods=["POST", "GET"])
     def see_post(slug):
-        post = BlogPost.query.filter_by(slug=slug).first()
+        try:
+            response = requests.get(f"{API_BASE_URL}/posts/{slug}")
+            response.raise_for_status()
+            post = response.json()["post"]
+        except requests.RequestException:
+            flash("Postagem não encontrada.", "warning")
+            return redirect(url_for("index"))
 
-        # Verifica se o post foi encontrado
-        if post is None:
-            flash('Postagem não encontrada.', 'warning')
-            return redirect(url_for('index'))
+        try:
+            author_id = post.get("author_id")
+            author_response = requests.get(f"{API_BASE_URL}/users/{author_id}")
+            author_response.raise_for_status()
+            autor = author_response.json()["user"]
+        except requests.RequestException:
+            autor = {"name": "Desconhecido"}
 
-        autor = AuthUser.query.get(post.author_id)  # Obtendo o autor pelo author_id
-        return render_template('blog/show_post.html', post=post)
- 
+        return render_template("blog/show_post.html", post=post, autor=autor)
+
     @app.route("/page/<int:post_num>")
     def page(post_num):
         offset = (post_num - 1) * 4
-        posts = BlogPost.query.order_by(BlogPost.id.desc()).offset(offset).limit(4).all()
-        autor = AuthUser.query.get(1)  # Supondo que você tenha um usuário com ID 1
+        try:
+            response = requests.get(f"{API_BASE_URL}/posts?limit=4&offset={offset}&order=desc")
+            response.raise_for_status()
+            posts = response.json()["posts"]
+        except requests.RequestException:
+            flash("Erro ao buscar posts da API.", "danger")
+            posts = []
 
-        # Tratamento de erro para posts vazios
         if not posts:
-            flash('Nenhuma postagem encontrada nesta página.', 'info')
+            flash("Nenhuma postagem encontrada nesta página.", "info")
 
-        return render_template("blog/home.html", posts=posts, autor=autor)
+        return render_template("blog/home.html", posts=posts)
