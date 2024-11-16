@@ -1,13 +1,14 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from db import db
 # Certifique-se de que seus modelos estão definidos em um arquivo models.py
-from models.__init_ import  BlogPost, AuthUser
+from models.__init_ import BlogPost, AuthUser
 
 
 def init_posts_routes(app):
     @app.route("/admin/create_post", methods=["GET", "POST"])
     def create_post():
         users = AuthUser.query.order_by(AuthUser.id.desc()).all()
+
         if request.method == 'POST':
             title = request.form['title']
             slug = request.form['slug']
@@ -24,12 +25,8 @@ def init_posts_routes(app):
             return redirect(url_for('post_list'))
 
         return render_template('admin/post/create_post.html', users=users)
-    
-    
-    
 
     @app.route('/admin/edit_post/<int:post_id>', methods=["GET"])
-    
     def edit_post(post_id):
         users = AuthUser.query.order_by(AuthUser.id).all()
         post = BlogPost.query.get(post_id)
@@ -37,9 +34,6 @@ def init_posts_routes(app):
             flash('Postagem não encontrada.', 'warning')
             return redirect(url_for('post_list'))
         return render_template('admin/post/edit_post.html', post=post, users=users)
-    
-    
-    
 
     @app.route('/admin/update_post/<int:post_id>', methods=["POST"])
     def update_post(post_id):
@@ -58,9 +52,6 @@ def init_posts_routes(app):
         db.session.commit()
         flash('Postagem atualizada com sucesso!', 'success')
         return redirect(url_for('post_list'))
-    
-    
-    
 
     @app.route('/admin/descartar/<int:post_id>', methods=["GET"])
     def discard_changes(post_id):
@@ -68,11 +59,9 @@ def init_posts_routes(app):
         db.session.commit()
         flash('Alterações descartadas.', 'info')
         return redirect(url_for('post_list'))
-    
-    
-    
 
     @app.route('/admin/post_list', methods=["GET"])
     def post_list():
         posts = BlogPost.query.order_by(BlogPost.id.desc()).all()
+        print(posts)
         return render_template('admin/post/post_list.html', posts=posts)

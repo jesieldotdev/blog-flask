@@ -14,20 +14,27 @@ app = Flask(__name__)
 # Configurações do aplicativo
 app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_TYPE'] = "filesystem"
-# Modo de leitura e escrita
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db?mode=rw'
+# Configuração para o Supabase
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres.smjvdyhhwzdzvloweoxt:SnarkyPump77@aws-0-sa-east-1.pooler.supabase.com:6543/postgres'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CASBIN_MODEL'] = 'model.conf'
 app.config['CASBIN_POLICY'] = 'policy.csv'
+
+# Inicializar o enforcer do Casbin
 enforcer = CasbinEnforcer(app)
+
 # Inicializar banco de dados
 init_db(app)
-with app.app_context():
-    if not AuthUser.query.first():  # Verifica se já existem usuários
-        user = AuthUser(email='jesiel364@gmail.com',
-                        username="jesiel", isAdmin=True, password="1245")
-        db.session.add(user)
-        db.session.commit()  # Passa o app para a função que inicializa o banco de dados
+
+# Verifica se existem usuários no banco
+# with app.app_context():
+#     if not AuthUser.query.first():
+#         user = AuthUser(email='jesiel364@gmail.com',
+#                         username="jesiel", isAdmin=True, password="1245")
+#         db.session.add(user)
+#         db.session.commit()
+
+# Inicializa as rotas
 init_routes(app)
 
 if __name__ == '__main__':

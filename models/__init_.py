@@ -3,20 +3,20 @@ from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class BlogPost(db.Model):
-    __tablename__ = 'blog_posts'
+    __tablename__ = 'posts'
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
     slug = db.Column(db.String, unique=True, nullable=False)
     body = db.Column(db.Text, nullable=False)
-    author_id = db.Column(db.Integer, db.ForeignKey('auth_user.id'))
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     author = relationship("AuthUser", backref="posts")
     image = db.Column(db.String)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
 
 
 class AuthUser(db.Model):
-    __tablename__ = 'auth_user'
+    __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False)
